@@ -16,7 +16,8 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
       {plots.map((num, index) => {
         const plot = allPlots[num - 1];
         const isSpecialPlot = specialPlots.includes(num);
-        const x = index * 142;
+        // Ensure even spacing by using consistent width multiplier
+        const x = index * 140;
         
         return (
           <g
@@ -27,14 +28,14 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
             <rect
               x={x}
               y={0}
-              width="142"
+              width="140"
               height="140"
               fill={getPlotColor(plot.status, plot.id)}
               stroke="#000"
               strokeWidth="1"
             />
             <text
-              x={x + 71}
+              x={x + 70}
               y={70}
               fill={isSpecialPlot ? "#000" : "white"}
               textAnchor="middle"
@@ -45,7 +46,7 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
             </text>
             {isSpecialPlot && (
               <text
-                x={x + 71}
+                x={x + 70}
                 y={90}
                 fill="#000"
                 textAnchor="middle"
