@@ -36,9 +36,9 @@ const PlotMap = () => {
             <rect x="850" y="0" width="100" height="1400" fill="#787878" />
             <rect x="895" y="0" width="4" height="1400" fill="white" opacity="0.8" />
 
-            {/* Plot Rows - All plots aligned along 32m road */}
+            {/* Plot Rows */}
             <PlotRow
-              plots={[6, 7, 5, 4, 3, 2, 1]}
+              plots={[6, 5, 4, 3, 2, 1]}
               transform="translate(0, 0)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -50,7 +50,7 @@ const PlotMap = () => {
             <rect x="0" y="168" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
-              plots={[11, 12, 10, 9, 8]}
+              plots={[11, 10, 9, 8, 7]}
               transform="translate(0, 200)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -62,7 +62,7 @@ const PlotMap = () => {
             <rect x="0" y="368" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
-              plots={[16, 17, 15, 14, 13]}
+              plots={[16, 15, 14, 13, 12]}
               transform="translate(0, 400)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -70,7 +70,7 @@ const PlotMap = () => {
             />
             
             <PlotRow
-              plots={[21, 22, 20, 19, 18]}
+              plots={[21, 20, 19, 18, 17]}
               transform="translate(0, 540)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -82,7 +82,7 @@ const PlotMap = () => {
             <rect x="0" y="708" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
-              plots={[26, 27, 25, 24, 23]}
+              plots={[26, 25, 24, 23, 22]}
               transform="translate(0, 740)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -90,7 +90,7 @@ const PlotMap = () => {
             />
             
             <PlotRow
-              plots={[31, 30, 29, 28]}
+              plots={[31, 30, 29, 28, 27]}
               transform="translate(0, 880)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
