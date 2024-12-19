@@ -12,12 +12,9 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
   const mainRoadPlots = [6, 7, 16, 17, 26, 27];
   let currentX = 0;
 
-  // Reverse the plots array if it contains plots 1-6
-  const plotsToRender = plots[0] <= 6 ? [...plots].reverse() : plots;
-
   return (
     <g transform={transform}>
-      {plotsToRender.map((num) => {
+      {plots.map((num) => {
         const plot = allPlots[num - 1];
         const isMainRoadPlot = mainRoadPlots.includes(num);
         const width = isMainRoadPlot ? 170 : 130;
