@@ -9,15 +9,11 @@ export type Plot = {
 export const getPlotPrice = (plotId: number) => {
   // All plots that cost 35k (prime plots along 32m road)
   const primePlots = [6, 11, 16, 21, 26, 31];
-  // All plots that cost 30k
-  const semiPrimePlots = [5, 10, 15, 20, 25, 30];
   
   if (primePlots.includes(plotId)) {
     return "$35,000";
-  } else if (semiPrimePlots.includes(plotId)) {
-    return "$30,000";
   } else {
-    return "$25,000";
+    return "$30,000";
   }
 };
 
