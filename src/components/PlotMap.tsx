@@ -34,25 +34,6 @@ const PlotMap = () => {
             {/* Main 32M Road */}
             <rect x="850" y="0" width="100" height="1400" fill="#787878" />
             <rect x="895" y="0" width="4" height="1400" fill="white" opacity="0.8" />
-            
-            {/* Horizontal 9M Roads */}
-            {[200, 600, 1000].map((y) => (
-              <g key={y}>
-                <rect x="0" y={y} width="850" height="60" fill="#787878" />
-                <rect x="0" y={y + 28} width="850" height="4" fill="white" opacity="0.8" />
-                {Array.from({ length: 20 }).map((_, i) => (
-                  <rect
-                    key={i}
-                    x={20 + i * 40}
-                    y={y + 28}
-                    width="20"
-                    height="4"
-                    fill="white"
-                    opacity="0.8"
-                  />
-                ))}
-              </g>
-            ))}
 
             {/* Plot Rows */}
             <PlotRow
@@ -62,6 +43,11 @@ const PlotMap = () => {
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
+            
+            {/* Horizontal 9M Road after first row */}
+            <rect x="0" y="140" width="850" height="60" fill="#787878" />
+            <rect x="0" y="168" width="850" height="4" fill="white" opacity="0.8" />
+            
             <PlotRow
               plots={[11, 10, 9, 8, 7]}
               transform="translate(0, 200)"
@@ -69,6 +55,11 @@ const PlotMap = () => {
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
+            
+            {/* Horizontal 9M Road after second row */}
+            <rect x="0" y="540" width="850" height="60" fill="#787878" />
+            <rect x="0" y="568" width="850" height="4" fill="white" opacity="0.8" />
+            
             <PlotRow
               plots={[12, 13, 14, 15, 16]}
               transform="translate(0, 600)"
@@ -76,6 +67,7 @@ const PlotMap = () => {
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
+            
             <PlotRow
               plots={[21, 20, 19, 18, 17]}
               transform="translate(0, 740)"
@@ -83,6 +75,11 @@ const PlotMap = () => {
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
+            
+            {/* Horizontal 9M Road after fourth row */}
+            <rect x="0" y="940" width="850" height="60" fill="#787878" />
+            <rect x="0" y="968" width="850" height="4" fill="white" opacity="0.8" />
+            
             <PlotRow
               plots={[22, 23, 24, 25, 26]}
               transform="translate(0, 1000)"
@@ -90,6 +87,7 @@ const PlotMap = () => {
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
+            
             <PlotRow
               plots={[31, 30, 29, 28, 27]}
               transform="translate(0, 1140)"
@@ -100,9 +98,9 @@ const PlotMap = () => {
 
             {/* Road Labels */}
             <g className="road-labels">
-              <text x="425" y="240" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
-              <text x="425" y="640" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
-              <text x="425" y="1040" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
+              <text x="425" y="180" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
+              <text x="425" y="580" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
+              <text x="425" y="980" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
               <text x="900" y="700" fontSize="16" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,900,700)">32M WIDE ROAD</text>
             </g>
 
