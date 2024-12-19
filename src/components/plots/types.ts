@@ -21,7 +21,13 @@ export const getPlotPrice = (plotId: number): string => {
   }
 };
 
-export const getPlotColor = (status: Plot["status"]) => {
+export const getPlotColor = (status: Plot["status"], plotId: number) => {
+  // Special yellow plots
+  const yellowPlots = [6, 7, 16, 17, 26, 27];
+  if (yellowPlots.includes(plotId)) {
+    return "#FEF7CD";
+  }
+
   switch (status) {
     case "available":
       return "#2F5233";
