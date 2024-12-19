@@ -22,9 +22,9 @@ export const getPlotPrice = (plotId: number): string => {
 };
 
 export const getPlotColor = (status: Plot["status"], plotId: number) => {
-  // Special yellow plots
-  const yellowPlots = [6, 7, 16, 17, 26, 27];
-  if (yellowPlots.includes(plotId)) {
+  // All plots that cost 25k (prime plots along 32m road)
+  const primePlots = [6, 11, 16, 21, 26, 31];
+  if (primePlots.includes(plotId)) {
     return "#FEF7CD";
   }
 
@@ -34,7 +34,7 @@ export const getPlotColor = (status: Plot["status"], plotId: number) => {
     case "reserved":
       return "#FFA500";
     case "sold":
-      return "#ea384c"; // Updated red color for sold plots
+      return "#ea384c";
     default:
       return "#2F5233";
   }
