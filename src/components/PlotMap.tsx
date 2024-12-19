@@ -5,7 +5,7 @@ import { PlotInfo } from "./plots/PlotInfo";
 
 const plots: Plot[] = Array.from({ length: 31 }, (_, i) => {
   const id = i + 1;
-  const isPrime = [6, 11, 16, 21, 26, 31].includes(id);
+  const isPrime = [6, 7, 11, 12, 16, 17, 21, 22, 26, 27, 31].includes(id);
   const isSold = [1, 2, 3, 4, 5, 29, 30].includes(id);
   return {
     id,
@@ -38,7 +38,7 @@ const PlotMap = () => {
 
             {/* Plot Rows - All plots aligned along 32m road */}
             <PlotRow
-              plots={[6, 5, 4, 3, 2, 1]}
+              plots={[6, 7, 5, 4, 3, 2, 1]}
               transform="translate(0, 0)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -50,7 +50,7 @@ const PlotMap = () => {
             <rect x="0" y="168" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
-              plots={[11, 10, 9, 8, 7]}
+              plots={[11, 12, 10, 9, 8]}
               transform="translate(0, 200)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -62,7 +62,7 @@ const PlotMap = () => {
             <rect x="0" y="368" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
-              plots={[16, 15, 14, 13, 12]}
+              plots={[16, 17, 15, 14, 13]}
               transform="translate(0, 400)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -70,7 +70,7 @@ const PlotMap = () => {
             />
             
             <PlotRow
-              plots={[21, 20, 19, 18, 17]}
+              plots={[21, 22, 20, 19, 18]}
               transform="translate(0, 540)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -82,7 +82,7 @@ const PlotMap = () => {
             <rect x="0" y="708" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
-              plots={[26, 25, 24, 23, 22]}
+              plots={[26, 27, 25, 24, 23]}
               transform="translate(0, 740)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -90,7 +90,7 @@ const PlotMap = () => {
             />
             
             <PlotRow
-              plots={[31, 30, 29, 28, 27]}
+              plots={[31, 30, 29, 28]}
               transform="translate(0, 880)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
