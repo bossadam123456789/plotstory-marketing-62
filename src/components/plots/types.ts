@@ -1,15 +1,15 @@
-export interface Plot {
+export type Plot = {
   id: number;
-  status: "available" | "reserved" | "sold";
+  status: "available" | "sold";
   size: string;
   price: string;
   isPrime: boolean;
-}
+};
 
-export const getPlotPrice = (plotId: number): string => {
-  // Plots along 32m road (6, 11, 16, 21, 26, 31)
+export const getPlotPrice = (plotId: number) => {
+  // All plots that cost 35k (prime plots along 32m road)
   const primePlots = [6, 11, 16, 21, 26, 31];
-  // Plots adjacent to prime plots
+  // All plots that cost 30k
   const semiPrimePlots = [5, 10, 15, 20, 25, 30];
   
   if (primePlots.includes(plotId)) {
@@ -24,25 +24,12 @@ export const getPlotPrice = (plotId: number): string => {
 export const getPlotColor = (status: Plot["status"], plotId: number) => {
   // All plots that cost 35k (prime plots along 32m road)
   const primePlots = [6, 11, 16, 21, 26, 31];
-  // Plots that should be red
-  const redPlots = [1, 2, 3, 4, 5, 29, 30];
   
-  if (primePlots.includes(plotId)) {
-    return "#FEF7CD";
-  }
-  
-  if (redPlots.includes(plotId)) {
-    return "#ea384c";
-  }
-
-  switch (status) {
-    case "available":
-      return "#2F5233";
-    case "reserved":
-      return "#FFA500";
-    case "sold":
-      return "#ea384c";
-    default:
-      return "#2F5233";
+  if (status === "sold") {
+    return "#ea384c"; // Red color for sold plots
+  } else if (primePlots.includes(plotId)) {
+    return "#FEF7CD"; // Light yellow for prime plots
+  } else {
+    return "#2F5233"; // Forest green for available plots
   }
 };

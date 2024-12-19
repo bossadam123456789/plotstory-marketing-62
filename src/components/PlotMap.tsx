@@ -6,9 +6,10 @@ import { PlotInfo } from "./plots/PlotInfo";
 const plots: Plot[] = Array.from({ length: 31 }, (_, i) => {
   const id = i + 1;
   const isPrime = [6, 11, 16, 21, 26, 31].includes(id);
+  const isSold = [1, 2, 3, 4, 5, 29, 30].includes(id); // Red plots are now sold
   return {
     id,
-    status: "available",
+    status: isSold ? "sold" : "available",
     size: "464.5 sq m (5000 sq ft)",
     price: getPlotPrice(id),
     isPrime,

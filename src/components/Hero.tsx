@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <div className="relative">
       {/* Hero Carousel */}
-      <Carousel className="relative">
+      <Carousel className="relative" opts={{ loop: true, duration: 2000 }} autoPlay={true}>
         <CarouselContent>
           {/* First slide - Original aerial view */}
           <CarouselItem>
