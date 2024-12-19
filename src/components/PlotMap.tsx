@@ -44,13 +44,13 @@ const PlotMap = () => {
               {/* Road markings */}
               <rect x="895" y="50" width="4" height="1300" fill="white" opacity="0.8" />
               
-              {/* 9M Wide Roads - Laminated style - Only where specified */}
+              {/* 9M Wide Roads - Laminated style */}
               {[150, 650, 1150].map((y) => (
                 <>
                   {/* Base road */}
-                  <rect x="50" y={y} width="900" height="60" fill="#787878" />
+                  <rect x="50" y={y} width="800" height="60" fill="#787878" />
                   {/* Laminated texture */}
-                  <rect x="50" y={y} width="900" height="60" fill="#787878" opacity="0.7" />
+                  <rect x="50" y={y} width="800" height="60" fill="#787878" opacity="0.7" />
                   {/* Center line */}
                   <rect x="50" y={y + 28} width="800" height="4" fill="white" opacity="0.8" />
                   {/* Dashed lines */}
@@ -68,7 +68,7 @@ const PlotMap = () => {
                 </>
               ))}
               
-              {/* Road labels with measurements - Increased text size */}
+              {/* Road labels with measurements */}
               <g className="road-labels">
                 <text x="450" y="185" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD (29.5 ft)</text>
                 <text x="450" y="685" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD (29.5 ft)</text>
@@ -76,7 +76,7 @@ const PlotMap = () => {
                 <text x="920" y="600" fontSize="16" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,900,600)">32M WIDE ROAD (105 ft)</text>
               </g>
 
-              {/* Plot measurements - Increased text size */}
+              {/* Plot measurements */}
               <g className="measurements" fill="#333" fontSize="14" fontWeight="500">
                 <text x="100" y="100">50 ft (15.24m)</text>
                 <line x1="80" y1="90" x2="130" y2="90" stroke="#333" strokeWidth="1.5" />
@@ -86,7 +86,7 @@ const PlotMap = () => {
               </g>
             </g>
 
-            {/* Corner Points - Increased text size */}
+            {/* Corner Points */}
             <g className="corner-points">
               <circle cx="50" cy="50" r="4" fill="#2F5233" />
               <circle cx="950" cy="50" r="4" fill="#2F5233" />
@@ -99,52 +99,52 @@ const PlotMap = () => {
               <text x="960" y="1340" fontSize="14" fontWeight="600" fill="#2F5233">AA3</text>
             </g>
 
-            {/* Plot Rows */}
+            {/* Plot Rows - Adjusted Y positions to be closer to roads */}
             <PlotRow
               plots={[1, 2, 3, 4, 5, 6]}
-              transform="translate(0, 0)"
+              transform="translate(50, 50)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[11, 10, 9, 8, 7]}
-              transform="translate(0, 250)"
+              transform="translate(50, 210)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[12, 13, 14, 15, 16]}
-              transform="translate(0, 400)"
+              transform="translate(50, 550)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[21, 20, 19, 18, 17]}
-              transform="translate(0, 750)"
+              transform="translate(50, 710)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[22, 23, 24, 25, 26]}
-              transform="translate(0, 900)"
+              transform="translate(50, 1050)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[31, 30, 29, 28, 27]}
-              transform="translate(0, 1250)"
+              transform="translate(50, 1210)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
           </svg>
           
-          {/* Legend moved below the map */}
+          {/* Legend */}
           <div className="mt-6 flex justify-center gap-8 bg-white/90 p-4 rounded-lg shadow-sm">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-forest rounded"></div>
