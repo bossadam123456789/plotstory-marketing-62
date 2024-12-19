@@ -53,7 +53,7 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
                 fontSize="14"
                 fontWeight="500"
               >
-                25k USD
+                35k USD
               </text>
             )}
           </g>
