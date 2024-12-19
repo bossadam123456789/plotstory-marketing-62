@@ -10,8 +10,6 @@ interface PlotRowProps {
 
 export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor }: PlotRowProps) => {
   const mainRoadPlots = [6, 7, 16, 17, 26, 27];
-
-  // Calculate the starting x position for the row
   let currentX = 0;
 
   return (
@@ -20,10 +18,7 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
         const plot = allPlots[num - 1];
         const isMainRoadPlot = mainRoadPlots.includes(num);
         const width = isMainRoadPlot ? 170 : 130;
-        
-        // Store the current x position for this plot
         const x = currentX;
-        // Update the x position for the next plot
         currentX += width;
         
         return (
