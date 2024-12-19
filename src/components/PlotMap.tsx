@@ -32,21 +32,21 @@ const PlotMap = () => {
             {/* Background */}
             <rect x="0" y="0" width="1000" height="1400" fill="#f5f5dc" opacity="0.3" />
             
-            {/* Main 32M Road - Adjusted to follow the irregular shape */}
+            {/* Main 32M Road - Adjusted to be straighter */}
             <path 
-              d="M850,0 L950,0 L900,1400 L800,1400 Z" 
+              d="M850,0 L950,0 L950,1400 L850,1400 Z" 
               fill="#787878" 
             />
             <path 
-              d="M895,0 L899,0 L849,1400 L845,1400 Z" 
+              d="M895,0 L905,0 L905,1400 L895,1400 Z" 
               fill="white" 
               opacity="0.8" 
             />
 
-            {/* Plot Rows - Adjusted for the irregular shape */}
+            {/* Plot Rows - Adjusted to be more aligned */}
             <PlotRow
               plots={[6, 5, 4, 3, 2, 1]}
-              transform="translate(0, 0) skew(-2deg, 0)"
+              transform="translate(0, 0)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
@@ -54,18 +54,18 @@ const PlotMap = () => {
             
             {/* Horizontal 9M Road after first row */}
             <path 
-              d="M0,140 L850,130 L850,190 L0,200 Z" 
+              d="M0,140 L850,140 L850,200 L0,200 Z" 
               fill="#787878" 
             />
             <path 
-              d="M0,168 L850,158 L850,162 L0,172 Z" 
+              d="M0,165 L850,165 L850,175 L0,175 Z" 
               fill="white" 
               opacity="0.8" 
             />
             
             <PlotRow
               plots={[11, 10, 9, 8, 7]}
-              transform="translate(0, 200) skew(-3deg, 0)"
+              transform="translate(0, 200)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
@@ -73,18 +73,18 @@ const PlotMap = () => {
             
             {/* Horizontal 9M Road after second row */}
             <path 
-              d="M0,340 L850,320 L850,380 L0,400 Z" 
+              d="M0,340 L850,340 L850,400 L0,400 Z" 
               fill="#787878" 
             />
             <path 
-              d="M0,368 L850,348 L850,352 L0,372 Z" 
+              d="M0,365 L850,365 L850,375 L0,375 Z" 
               fill="white" 
               opacity="0.8" 
             />
             
             <PlotRow
               plots={[16, 15, 14, 13, 12]}
-              transform="translate(0, 400) skew(-4deg, 0)"
+              transform="translate(0, 400)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
@@ -92,7 +92,7 @@ const PlotMap = () => {
             
             <PlotRow
               plots={[21, 20, 19, 18, 17]}
-              transform="translate(0, 540) skew(-4deg, 0)"
+              transform="translate(0, 540)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
@@ -100,18 +100,18 @@ const PlotMap = () => {
             
             {/* Horizontal 9M Road after fourth row */}
             <path 
-              d="M0,680 L850,650 L850,710 L0,740 Z" 
+              d="M0,680 L850,680 L850,740 L0,740 Z" 
               fill="#787878" 
             />
             <path 
-              d="M0,708 L850,678 L850,682 L0,712 Z" 
+              d="M0,705 L850,705 L850,715 L0,715 Z" 
               fill="white" 
               opacity="0.8" 
             />
             
             <PlotRow
               plots={[26, 25, 24, 23, 22]}
-              transform="translate(0, 740) skew(-5deg, 0)"
+              transform="translate(0, 740)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
@@ -119,7 +119,7 @@ const PlotMap = () => {
             
             <PlotRow
               plots={[31, 30, 29, 28, 27]}
-              transform="translate(0, 880) skew(-5deg, 0)"
+              transform="translate(0, 880)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
@@ -137,8 +137,8 @@ const PlotMap = () => {
             <g className="corner-points">
               <circle cx="0" cy="0" r="4" fill="#2F5233" />
               <circle cx="950" cy="0" r="4" fill="#2F5233" />
-              <circle cx="800" cy="1400" r="4" fill="#2F5233" />
-              <circle cx="900" cy="1400" r="4" fill="#2F5233" />
+              <circle cx="850" cy="1400" r="4" fill="#2F5233" />
+              <circle cx="950" cy="1400" r="4" fill="#2F5233" />
             </g>
           </svg>
 
