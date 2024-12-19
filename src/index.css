@@ -78,20 +78,25 @@
 @layer utilities {
   .animate-fade-in {
     opacity: 1 !important;
+    transition: opacity 1s ease-out;
   }
 
   .animate-slide-up {
-    animation: slideUp 1s ease-out forwards;
+    animation: slideUp 1.5s ease-out forwards;
   }
 
   .animate-ken-burns {
     animation: kenBurns 20s ease-out infinite alternate;
   }
 
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
   @keyframes slideUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(40px);
     }
     to {
       opacity: 1;
@@ -105,6 +110,18 @@
     }
     to {
       transform: scale(1.1) translate(-2%, -2%);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
     }
   }
 }
