@@ -53,44 +53,188 @@ const PlotMap = () => {
             <text x="350" y="400" className="text-sm">9M WIDE ROAD</text>
             <text x="350" y="650" className="text-sm">9M WIDE ROAD</text>
             <text x="350" y="900" className="text-sm">9M WIDE ROAD</text>
-            <text x="700" y="500" className="text-sm rotate-90">32M WIDE ROAD</text>
+            <text x="700" y="500" className="text-sm" transform="rotate(90,700,500)">32M WIDE ROAD</text>
 
-            {/* Plot groups */}
-            {[0, 1, 2, 3].map((row) => (
-              <g key={row} transform={`translate(0, ${row * 250})`}>
-                {[...Array(row === 3 ? 5 : 6)].map((_, col) => {
-                  const plotId = row * 6 + col + 1;
-                  if (plotId <= 31) {
-                    return (
-                      <g
-                        key={col}
-                        className="plot-hover cursor-pointer"
-                        onClick={() => setSelectedPlot(plots[plotId - 1])}
-                      >
-                        <rect
-                          x={100 + col * 100}
-                          y={50}
-                          width="80"
-                          height="120"
-                          fill={getPlotColor(plots[plotId - 1].status)}
-                          stroke="#000"
-                          strokeWidth="1"
-                        />
-                        <text
-                          x={140 + col * 100}
-                          y={120}
-                          fill="white"
-                          textAnchor="middle"
-                        >
-                          {plotId}
-                        </text>
-                      </g>
-                    );
-                  }
-                  return null;
-                })}
-              </g>
-            ))}
+            {/* Corner Points */}
+            <text x="50" y="50" className="text-sm">AA1</text>
+            <text x="750" y="50" className="text-sm">AA2</text>
+            <text x="50" y="750" className="text-sm">AA5</text>
+            <text x="50" y="950" className="text-sm">AA4</text>
+            <text x="750" y="950" className="text-sm">AA3</text>
+
+            {/* Plot Row 1 (1-6) */}
+            <g transform="translate(0, 0)">
+              {[1, 2, 3, 4, 5, 6].map((num, col) => (
+                <g
+                  key={num}
+                  className="plot-hover cursor-pointer"
+                  onClick={() => setSelectedPlot(plots[num - 1])}
+                >
+                  <rect
+                    x={100 + col * 100}
+                    y={50}
+                    width="80"
+                    height="120"
+                    fill={getPlotColor(plots[num - 1].status)}
+                    stroke="#000"
+                    strokeWidth="1"
+                  />
+                  <text
+                    x={140 + col * 100}
+                    y={120}
+                    fill="white"
+                    textAnchor="middle"
+                  >
+                    {num}
+                  </text>
+                </g>
+              ))}
+            </g>
+
+            {/* Plot Row 2 (11-7) */}
+            <g transform="translate(0, 250)">
+              {[11, 10, 9, 8, 7].map((num, col) => (
+                <g
+                  key={num}
+                  className="plot-hover cursor-pointer"
+                  onClick={() => setSelectedPlot(plots[num - 1])}
+                >
+                  <rect
+                    x={100 + col * 100}
+                    y={50}
+                    width="80"
+                    height="120"
+                    fill={getPlotColor(plots[num - 1].status)}
+                    stroke="#000"
+                    strokeWidth="1"
+                  />
+                  <text
+                    x={140 + col * 100}
+                    y={120}
+                    fill="white"
+                    textAnchor="middle"
+                  >
+                    {num}
+                  </text>
+                </g>
+              ))}
+            </g>
+
+            {/* Plot Row 3 (12-16) */}
+            <g transform="translate(0, 400)">
+              {[12, 13, 14, 15, 16].map((num, col) => (
+                <g
+                  key={num}
+                  className="plot-hover cursor-pointer"
+                  onClick={() => setSelectedPlot(plots[num - 1])}
+                >
+                  <rect
+                    x={100 + col * 100}
+                    y={50}
+                    width="80"
+                    height="120"
+                    fill={getPlotColor(plots[num - 1].status)}
+                    stroke="#000"
+                    strokeWidth="1"
+                  />
+                  <text
+                    x={140 + col * 100}
+                    y={120}
+                    fill="white"
+                    textAnchor="middle"
+                  >
+                    {num}
+                  </text>
+                </g>
+              ))}
+            </g>
+
+            {/* Plot Row 4 (21-17) */}
+            <g transform="translate(0, 550)">
+              {[21, 20, 19, 18, 17].map((num, col) => (
+                <g
+                  key={num}
+                  className="plot-hover cursor-pointer"
+                  onClick={() => setSelectedPlot(plots[num - 1])}
+                >
+                  <rect
+                    x={100 + col * 100}
+                    y={50}
+                    width="80"
+                    height="120"
+                    fill={getPlotColor(plots[num - 1].status)}
+                    stroke="#000"
+                    strokeWidth="1"
+                  />
+                  <text
+                    x={140 + col * 100}
+                    y={120}
+                    fill="white"
+                    textAnchor="middle"
+                  >
+                    {num}
+                  </text>
+                </g>
+              ))}
+            </g>
+
+            {/* Plot Row 5 (22-26) */}
+            <g transform="translate(0, 700)">
+              {[22, 23, 24, 25, 26].map((num, col) => (
+                <g
+                  key={num}
+                  className="plot-hover cursor-pointer"
+                  onClick={() => setSelectedPlot(plots[num - 1])}
+                >
+                  <rect
+                    x={100 + col * 100}
+                    y={50}
+                    width="80"
+                    height="120"
+                    fill={getPlotColor(plots[num - 1].status)}
+                    stroke="#000"
+                    strokeWidth="1"
+                  />
+                  <text
+                    x={140 + col * 100}
+                    y={120}
+                    fill="white"
+                    textAnchor="middle"
+                  >
+                    {num}
+                  </text>
+                </g>
+              ))}
+            </g>
+
+            {/* Plot Row 6 (31-27) */}
+            <g transform="translate(0, 850)">
+              {[31, 30, 29, 28, 27].map((num, col) => (
+                <g
+                  key={num}
+                  className="plot-hover cursor-pointer"
+                  onClick={() => setSelectedPlot(plots[num - 1])}
+                >
+                  <rect
+                    x={100 + col * 100}
+                    y={50}
+                    width="80"
+                    height="120"
+                    fill={getPlotColor(plots[num - 1].status)}
+                    stroke="#000"
+                    strokeWidth="1"
+                  />
+                  <text
+                    x={140 + col * 100}
+                    y={120}
+                    fill="white"
+                    textAnchor="middle"
+                  >
+                    {num}
+                  </text>
+                </g>
+              ))}
+            </g>
           </svg>
         </div>
 
