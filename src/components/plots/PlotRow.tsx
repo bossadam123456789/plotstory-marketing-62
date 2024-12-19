@@ -17,8 +17,9 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
         const plot = allPlots[num - 1];
         const isSpecialPlot = specialPlots.includes(num);
         
-        const xOffset = col * 100; // Reduced from 120 to 100 to remove extra spacing
-        const x = 100 + xOffset;
+        // Removed the additional 100 offset, now plots will be directly adjacent
+        const xOffset = col * 100;
+        const x = xOffset;
         
         return (
           <g

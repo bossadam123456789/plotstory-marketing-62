@@ -31,7 +31,27 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Second image - Plot Layout */}
+      {/* New aerial photos section */}
+      <div className="container mx-auto py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-lg shadow-xl p-4">
+            <img 
+              src="/lovable-uploads/cbe36140-3ab3-435c-ade8-be8e366a8961.png" 
+              alt="Aerial View of Plot"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+          <div className="bg-white rounded-lg shadow-xl p-4">
+            <img 
+              src="/lovable-uploads/5facca90-233e-4e32-b698-9670f5dfe243.png" 
+              alt="Plot Layout Overview"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Plot Layout Plan */}
       <div className="container mx-auto py-16">
         <div className="bg-white rounded-lg shadow-xl p-8">
           <h2 className="text-3xl font-bold text-center mb-8">Plot Layout Plan</h2>
