@@ -17,8 +17,8 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
       {plots.map((num) => {
         const plot = allPlots[num - 1];
         const isMainRoadPlot = mainRoadPlots.includes(num);
-        // Adjust width for plots 1-6
-        const width = num <= 6 ? (isMainRoadPlot ? 170 : 130) : (isMainRoadPlot ? 170 : 130);
+        // Use consistent width for all plots
+        const width = isMainRoadPlot ? 170 : 130;
         const x = currentX;
         currentX += width;
         
