@@ -17,8 +17,7 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
         const plot = allPlots[num - 1];
         const isSpecialPlot = specialPlots.includes(num);
         
-        // Adjust x position to avoid road overlap
-        const xOffset = col * 120; // Increased spacing between plots
+        const xOffset = col * 120;
         const x = 100 + xOffset;
         
         return (
@@ -41,6 +40,8 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
               y={110}
               fill={isSpecialPlot ? "#000" : "white"}
               textAnchor="middle"
+              fontSize="18"
+              fontWeight="600"
             >
               {num}
             </text>
@@ -50,7 +51,8 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
                 y={130}
                 fill="#000"
                 textAnchor="middle"
-                fontSize="12"
+                fontSize="14"
+                fontWeight="500"
               >
                 25k USD
               </text>

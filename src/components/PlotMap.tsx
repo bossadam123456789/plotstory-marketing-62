@@ -68,38 +68,38 @@ const PlotMap = () => {
                 </>
               ))}
               
-              {/* Road labels with measurements */}
+              {/* Road labels with measurements - Increased text size */}
               <g className="road-labels">
-                <text x="450" y="185" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
-                <text x="450" y="685" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
-                <text x="450" y="1185" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
-                <text x="920" y="600" className="text-sm font-semibold" fill="white" transform="rotate(90,900,600)">32M WIDE ROAD (105 ft)</text>
+                <text x="450" y="185" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD (29.5 ft)</text>
+                <text x="450" y="685" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD (29.5 ft)</text>
+                <text x="450" y="1185" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD (29.5 ft)</text>
+                <text x="920" y="600" fontSize="16" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,900,600)">32M WIDE ROAD (105 ft)</text>
               </g>
 
-              {/* Plot measurements */}
-              <g className="measurements" fill="#666" fontSize="12">
+              {/* Plot measurements - Increased text size */}
+              <g className="measurements" fill="#333" fontSize="14" fontWeight="500">
                 <text x="100" y="100">50 ft (15.24m)</text>
-                <line x1="80" y1="90" x2="130" y2="90" stroke="#666" strokeWidth="1" />
+                <line x1="80" y1="90" x2="130" y2="90" stroke="#333" strokeWidth="1.5" />
                 <text x="60" y="200" transform="rotate(-90,60,200)">100 ft (30.48m)</text>
-                <line x1="70" y1="180" x2="70" y2="280" stroke="#666" strokeWidth="1" />
+                <line x1="70" y1="180" x2="70" y2="280" stroke="#333" strokeWidth="1.5" />
                 <text x="150" y="120">Area: 464.5 m² (5000 sq ft)</text>
               </g>
             </g>
 
-            {/* Corner Points */}
+            {/* Corner Points - Increased text size */}
             <g className="corner-points">
               <circle cx="50" cy="50" r="4" fill="#2F5233" />
               <circle cx="950" cy="50" r="4" fill="#2F5233" />
               <circle cx="50" cy="1350" r="4" fill="#2F5233" />
               <circle cx="950" cy="1350" r="4" fill="#2F5233" />
               
-              <text x="60" y="40" className="text-xs font-medium" fill="#2F5233">AA1</text>
-              <text x="960" y="40" className="text-xs font-medium" fill="#2F5233">AA2</text>
-              <text x="60" y="1340" className="text-xs font-medium" fill="#2F5233">AA4</text>
-              <text x="960" y="1340" className="text-xs font-medium" fill="#2F5233">AA3</text>
+              <text x="60" y="40" fontSize="14" fontWeight="600" fill="#2F5233">AA1</text>
+              <text x="960" y="40" fontSize="14" fontWeight="600" fill="#2F5233">AA2</text>
+              <text x="60" y="1340" fontSize="14" fontWeight="600" fill="#2F5233">AA4</text>
+              <text x="960" y="1340" fontSize="14" fontWeight="600" fill="#2F5233">AA3</text>
             </g>
 
-            {/* Plot Rows - Adjusted spacing to match the new layout */}
+            {/* Plot Rows */}
             <PlotRow
               plots={[1, 2, 3, 4, 5, 6]}
               transform="translate(0, 0)"
