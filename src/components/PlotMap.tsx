@@ -57,12 +57,12 @@ const PlotMap = () => {
             />
             
             {/* Horizontal 9M Road after second row */}
-            <rect x="0" y="540" width="850" height="60" fill="#787878" />
-            <rect x="0" y="568" width="850" height="4" fill="white" opacity="0.8" />
+            <rect x="0" y="340" width="850" height="60" fill="#787878" />
+            <rect x="0" y="368" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
               plots={[12, 13, 14, 15, 16]}
-              transform="translate(0, 600)"
+              transform="translate(0, 400)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
@@ -70,19 +70,19 @@ const PlotMap = () => {
             
             <PlotRow
               plots={[21, 20, 19, 18, 17]}
-              transform="translate(0, 740)"
+              transform="translate(0, 540)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             
             {/* Horizontal 9M Road after fourth row */}
-            <rect x="0" y="940" width="850" height="60" fill="#787878" />
-            <rect x="0" y="968" width="850" height="4" fill="white" opacity="0.8" />
+            <rect x="0" y="680" width="850" height="60" fill="#787878" />
+            <rect x="0" y="708" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
               plots={[22, 23, 24, 25, 26]}
-              transform="translate(0, 1000)"
+              transform="translate(0, 740)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
@@ -90,7 +90,7 @@ const PlotMap = () => {
             
             <PlotRow
               plots={[31, 30, 29, 28, 27]}
-              transform="translate(0, 1140)"
+              transform="translate(0, 880)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
@@ -99,8 +99,8 @@ const PlotMap = () => {
             {/* Road Labels */}
             <g className="road-labels">
               <text x="425" y="180" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
-              <text x="425" y="580" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
-              <text x="425" y="980" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
+              <text x="425" y="380" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
+              <text x="425" y="720" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
               <text x="900" y="700" fontSize="16" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,900,700)">32M WIDE ROAD</text>
             </g>
 
