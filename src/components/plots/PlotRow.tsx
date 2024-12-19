@@ -9,15 +9,16 @@ interface PlotRowProps {
 }
 
 export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor }: PlotRowProps) => {
-  const specialPlots = [6, 7, 16, 17, 26, 27];
+  const mainRoadPlots = [6, 7, 16, 17, 26, 27];
 
   return (
     <g transform={transform}>
       {plots.map((num, index) => {
         const plot = allPlots[num - 1];
-        const isSpecialPlot = specialPlots.includes(num);
-        // Ensure even spacing by using consistent width multiplier
-        const x = index * 140;
+        const isMainRoadPlot = mainRoadPlots.includes(num);
+        // Adjust width for plots touching the main road
+        const width = isMainRoadPlot ? 160 : 140;
+        const x = index * 140 + (isMainRoadPlot ? -20 : 0);
         
         return (
           <g
@@ -28,25 +29,25 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
             <rect
               x={x}
               y={0}
-              width="140"
-              height="140"
+              width={width}
+              height={140}
               fill={getPlotColor(plot.status, plot.id)}
               stroke="#000"
               strokeWidth="1"
             />
             <text
-              x={x + 70}
+              x={x + width/2}
               y={70}
-              fill={isSpecialPlot ? "#000" : "white"}
+              fill={plot.isPrime ? "#000" : "white"}
               textAnchor="middle"
               fontSize="18"
               fontWeight="600"
             >
               {num}
             </text>
-            {isSpecialPlot && (
+            {plot.isPrime && (
               <text
-                x={x + 70}
+                x={x + width/2}
                 y={90}
                 fill="#000"
                 textAnchor="middle"
