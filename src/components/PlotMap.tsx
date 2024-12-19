@@ -125,6 +125,7 @@ const PlotMap = () => {
                 allPlots={plots}
                 getPlotColor={getPlotColor}
               />
+
             </g>
 
             {/* Corner Points Labels */}
