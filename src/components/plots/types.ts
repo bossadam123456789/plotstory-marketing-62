@@ -24,8 +24,15 @@ export const getPlotPrice = (plotId: number): string => {
 export const getPlotColor = (status: Plot["status"], plotId: number) => {
   // All plots that cost 25k (prime plots along 32m road)
   const primePlots = [6, 11, 16, 21, 26, 31];
+  // Plots 1-5 should be red
+  const redPlots = [1, 2, 3, 4, 5];
+  
   if (primePlots.includes(plotId)) {
     return "#FEF7CD";
+  }
+  
+  if (redPlots.includes(plotId)) {
+    return "#ea384c";
   }
 
   switch (status) {
