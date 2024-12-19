@@ -8,7 +8,7 @@ const Hero = () => {
       <div 
         className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center"
         style={{ 
-          backgroundImage: 'url("/lovable-uploads/9215dba2-1191-4ad8-a08b-321ea4a5db4d.png")',
+          backgroundImage: 'url("/lovable-uploads/d68412fd-1bcd-4b39-860f-02b30255e58a.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

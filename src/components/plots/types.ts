@@ -28,7 +28,7 @@ export const getPlotColor = (status: Plot["status"]) => {
     case "reserved":
       return "#FFA500";
     case "sold":
-      return "#FF0000";
+      return "#ea384c"; // Updated red color for sold plots
     default:
       return "#2F5233";
   }
