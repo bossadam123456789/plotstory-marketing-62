@@ -6,7 +6,7 @@ import { PlotInfo } from "./plots/PlotInfo";
 const plots: Plot[] = Array.from({ length: 31 }, (_, i) => {
   const id = i + 1;
   const isPrime = [6, 11, 16, 21, 26, 31].includes(id);
-  const isSold = [1, 2, 3, 4, 5, 29, 30].includes(id); // Red plots are now sold
+  const isSold = [1, 2, 3, 4, 5, 29, 30].includes(id);
   return {
     id,
     status: isSold ? "sold" : "available",
@@ -36,9 +36,9 @@ const PlotMap = () => {
             <rect x="850" y="0" width="100" height="1400" fill="#787878" />
             <rect x="895" y="0" width="4" height="1400" fill="white" opacity="0.8" />
 
-            {/* Plot Rows */}
+            {/* Plot Rows - All plots aligned along 32m road */}
             <PlotRow
-              plots={[1, 2, 3, 4, 5, 6]}
+              plots={[6, 5, 4, 3, 2, 1]}
               transform="translate(0, 0)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -62,7 +62,7 @@ const PlotMap = () => {
             <rect x="0" y="368" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
-              plots={[12, 13, 14, 15, 16]}
+              plots={[16, 15, 14, 13, 12]}
               transform="translate(0, 400)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -82,7 +82,7 @@ const PlotMap = () => {
             <rect x="0" y="708" width="850" height="4" fill="white" opacity="0.8" />
             
             <PlotRow
-              plots={[22, 23, 24, 25, 26]}
+              plots={[26, 25, 24, 23, 22]}
               transform="translate(0, 740)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
@@ -122,7 +122,7 @@ const PlotMap = () => {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 md:w-4 md:h-4 bg-[#FEF7CD] border border-black/10 rounded"></div>
-              <span className="text-sm">Premium (25k USD)</span>
+              <span className="text-sm">Premium (35k USD)</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 md:w-4 md:h-4 bg-[#ea384c] rounded"></div>

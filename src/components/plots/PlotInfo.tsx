@@ -13,6 +13,17 @@ interface PlotInfoProps {
 }
 
 export const PlotInfo = ({ selectedPlot }: PlotInfoProps) => {
+  const handleInquire = () => {
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+      const messageTextarea = contactForm.querySelector('textarea');
+      if (messageTextarea) {
+        messageTextarea.value = `Hi, I wanted to buy plot number ${selectedPlot?.id}`;
+      }
+      contactForm.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Card className="h-fit">
       <CardHeader>
@@ -41,7 +52,10 @@ export const PlotInfo = ({ selectedPlot }: PlotInfoProps) => {
                 </p>
               )}
             </div>
-            <Button className="w-full bg-forest hover:bg-forest-light">
+            <Button 
+              className="w-full bg-forest hover:bg-forest-light"
+              onClick={handleInquire}
+            >
               Inquire About This Plot
             </Button>
           </div>
