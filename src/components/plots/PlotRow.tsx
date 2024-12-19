@@ -17,7 +17,7 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
         const plot = allPlots[num - 1];
         const isSpecialPlot = specialPlots.includes(num);
         
-        const xOffset = col * 120;
+        const xOffset = col * 100; // Reduced from 120 to 100 to remove extra spacing
         const x = 100 + xOffset;
         
         return (
