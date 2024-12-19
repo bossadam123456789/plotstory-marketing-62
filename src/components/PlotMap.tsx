@@ -9,7 +9,7 @@ const plots: Plot[] = Array.from({ length: 31 }, (_, i) => {
   return {
     id,
     status: "available",
-    size: "464.5 sq m (5000 sq ft)", // Added square meters
+    size: "464.5 sq m (5000 sq ft)",
     price: getPlotPrice(id),
     isPrime,
   };
@@ -23,21 +23,6 @@ const PlotMap = () => {
       <h2 className="text-4xl font-bold text-center mb-12">Plot Layout</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="relative bg-sand/50 p-6 rounded-lg shadow-lg">
-          <div className="absolute top-4 right-4 flex flex-col gap-2 bg-white/90 p-3 rounded-lg shadow-sm">
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-forest rounded"></div>
-              <span className="text-sm">Available</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-[#FEF7CD] border border-black/10 rounded"></div>
-              <span className="text-sm">Premium (25k USD)</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-[#ea384c] rounded"></div>
-              <span className="text-sm">Sold</span>
-            </div>
-          </div>
-          
           <svg
             viewBox="0 0 1000 1400"
             className="w-full h-auto"
@@ -158,6 +143,22 @@ const PlotMap = () => {
               getPlotColor={getPlotColor}
             />
           </svg>
+          
+          {/* Legend moved below the map */}
+          <div className="mt-6 flex justify-center gap-8 bg-white/90 p-4 rounded-lg shadow-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-forest rounded"></div>
+              <span className="text-sm">Available</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-[#FEF7CD] border border-black/10 rounded"></div>
+              <span className="text-sm">Premium (25k USD)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-[#ea384c] rounded"></div>
+              <span className="text-sm">Sold</span>
+            </div>
+          </div>
         </div>
 
         <PlotInfo selectedPlot={selectedPlot} />
