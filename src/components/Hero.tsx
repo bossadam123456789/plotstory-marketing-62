@@ -31,6 +31,43 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* Property Description */}
+      <div className="container mx-auto py-8 md:py-12 px-4 md:px-6">
+        <div className="bg-white/90 rounded-lg shadow-xl p-6 md:p-8 max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-forest mb-6">About This Property</h2>
+          <div className="space-y-4 text-gray-700">
+            <p className="font-medium text-lg">
+              This exceptional 4-acre parcel of land is situated in the highly sought-after Syokimau area, Mavoko, offering an ideal investment opportunity.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <h3 className="font-bold text-forest">Prime Location</h3>
+                <p>Just 500 meters from the Quarry Road exit and 2.6 kilometers from the Expressway exit, ensuring quick and convenient access to major transportation routes.</p>
+                
+                <h3 className="font-bold text-forest">Close to Key Amenities</h3>
+                <p>Located a short distance from Viraj International School, this land is perfect for residential, educational, or commercial development.</p>
+              </div>
+              
+              <div className="space-y-3">
+                <h3 className="font-bold text-forest">Excellent Infrastructure</h3>
+                <p>The land is directly accessible via a tarmacked road and is adjacent to a 32-meter-wide main road, offering excellent visibility and access.</p>
+                
+                <h3 className="font-bold text-forest">Well-Planned Layout</h3>
+                <p>The land is divided into 31 plots, each accessible via a network of 9-meter-wide internal roads, as illustrated in the layout plan.</p>
+                
+                <h3 className="font-bold text-forest">Utilities Ready</h3>
+                <p>Electricity is readily available, facilitating seamless development.</p>
+              </div>
+            </div>
+            
+            <p className="text-forest font-medium mt-4">
+              This strategically located property offers a perfect blend of accessibility, proximity to amenities, and infrastructure, making it an ideal choice for residential, commercial, or mixed-use projects in the rapidly expanding Syokimau area.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* New aerial photos section */}
       <div className="container mx-auto py-8 md:py-16 px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
