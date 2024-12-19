@@ -17,7 +17,8 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
         const plot = allPlots[num - 1];
         const isMainRoadPlot = mainRoadPlots.includes(num);
         const width = isMainRoadPlot ? 170 : 130;
-        const x = index * (isMainRoadPlot ? 170 : 130);
+        // Remove spacing by calculating x position without gaps
+        const x = index * width;
         
         return (
           <g
