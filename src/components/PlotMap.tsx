@@ -39,37 +39,37 @@ const PlotMap = () => {
           </div>
           
           <svg
-            viewBox="0 0 800 1000"
+            viewBox="0 0 1000 1200"
             className="w-full h-auto"
             style={{ maxHeight: "80vh" }}
           >
             {/* Background styling */}
-            <rect x="0" y="0" width="800" height="1000" fill="#f5f5dc" opacity="0.3" />
+            <rect x="0" y="0" width="1000" height="1200" fill="#f5f5dc" opacity="0.3" />
             
             {/* Roads with improved styling */}
             <g className="roads">
               {/* 32M Wide Road - Tarmac style */}
-              <rect x="650" y="50" width="100" height="900" fill="#333333" />
+              <rect x="850" y="50" width="100" height="1100" fill="#333333" />
               {/* Tarmac texture */}
               <pattern id="tarmacPattern" patternUnits="userSpaceOnUse" width="10" height="10">
                 <rect width="10" height="10" fill="#333333" />
                 <circle cx="5" cy="5" r="0.5" fill="#444444" />
               </pattern>
-              <rect x="650" y="50" width="100" height="900" fill="url(#tarmacPattern)" />
+              <rect x="850" y="50" width="100" height="1100" fill="url(#tarmacPattern)" />
               {/* Road markings */}
-              <rect x="695" y="50" width="4" height="900" fill="white" opacity="0.8" />
+              <rect x="895" y="50" width="4" height="1100" fill="white" opacity="0.8" />
               
               {/* 9M Wide Roads - Laminated style */}
-              {[120, 370, 620, 870].map((y) => (
+              {[150, 400, 650, 900].map((y) => (
                 <>
                   {/* Base road */}
-                  <rect x="50" y={y} width="700" height="60" fill="#787878" />
+                  <rect x="50" y={y} width="900" height="60" fill="#787878" />
                   {/* Laminated texture */}
-                  <rect x="50" y={y} width="700" height="60" fill="#787878" opacity="0.7" />
+                  <rect x="50" y={y} width="900" height="60" fill="#787878" opacity="0.7" />
                   {/* Center line */}
-                  <rect x="50" y={y + 28} width="600" height="4" fill="white" opacity="0.8" />
+                  <rect x="50" y={y + 28} width="800" height="4" fill="white" opacity="0.8" />
                   {/* Dashed lines */}
-                  {Array.from({ length: 20 }).map((_, i) => (
+                  {Array.from({ length: 25 }).map((_, i) => (
                     <rect
                       key={i}
                       x={70 + i * 30}
@@ -85,11 +85,11 @@ const PlotMap = () => {
               
               {/* Road labels with measurements */}
               <g className="road-labels">
-                <text x="350" y="155" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
-                <text x="350" y="405" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
-                <text x="350" y="655" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
-                <text x="350" y="905" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
-                <text x="720" y="500" className="text-sm font-semibold" fill="white" transform="rotate(90,700,500)">32M WIDE ROAD (105 ft)</text>
+                <text x="450" y="185" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
+                <text x="450" y="435" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
+                <text x="450" y="685" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
+                <text x="450" y="935" className="text-sm font-semibold" fill="#666">9M WIDE ROAD (29.5 ft)</text>
+                <text x="920" y="600" className="text-sm font-semibold" fill="white" transform="rotate(90,900,600)">32M WIDE ROAD (105 ft)</text>
               </g>
 
               {/* Plot measurements */}
@@ -104,16 +104,16 @@ const PlotMap = () => {
             {/* Corner Points with improved styling */}
             <g className="corner-points">
               <circle cx="50" cy="50" r="4" fill="#2F5233" />
-              <circle cx="750" cy="50" r="4" fill="#2F5233" />
-              <circle cx="50" cy="750" r="4" fill="#2F5233" />
+              <circle cx="950" cy="50" r="4" fill="#2F5233" />
               <circle cx="50" cy="950" r="4" fill="#2F5233" />
-              <circle cx="750" cy="950" r="4" fill="#2F5233" />
+              <circle cx="50" cy="1150" r="4" fill="#2F5233" />
+              <circle cx="950" cy="1150" r="4" fill="#2F5233" />
               
               <text x="60" y="40" className="text-xs font-medium" fill="#2F5233">AA1</text>
-              <text x="760" y="40" className="text-xs font-medium" fill="#2F5233">AA2</text>
-              <text x="60" y="740" className="text-xs font-medium" fill="#2F5233">AA5</text>
-              <text x="60" y="940" className="text-xs font-medium" fill="#2F5233">AA4</text>
-              <text x="760" y="940" className="text-xs font-medium" fill="#2F5233">AA3</text>
+              <text x="960" y="40" className="text-xs font-medium" fill="#2F5233">AA2</text>
+              <text x="60" y="940" className="text-xs font-medium" fill="#2F5233">AA5</text>
+              <text x="60" y="1140" className="text-xs font-medium" fill="#2F5233">AA4</text>
+              <text x="960" y="1140" className="text-xs font-medium" fill="#2F5233">AA3</text>
             </g>
 
             {/* Plot Rows */}
@@ -133,28 +133,28 @@ const PlotMap = () => {
             />
             <PlotRow
               plots={[12, 13, 14, 15, 16]}
-              transform="translate(0, 400)"
+              transform="translate(0, 500)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[21, 20, 19, 18, 17]}
-              transform="translate(0, 550)"
+              transform="translate(0, 750)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[22, 23, 24, 25, 26]}
-              transform="translate(0, 700)"
+              transform="translate(0, 1000)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[31, 30, 29, 28, 27]}
-              transform="translate(0, 850)"
+              transform="translate(0, 1250)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
