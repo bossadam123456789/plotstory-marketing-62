@@ -34,11 +34,11 @@ const PlotMap = () => {
             
             {/* Main 32M Road - Angled */}
             <path 
-              d="M850,0 L950,0 L900,1200 L800,1200 Z" 
+              d="M800,0 L900,0 L850,1200 L750,1200 Z" 
               fill="#787878" 
             />
             <path 
-              d="M895,0 L905,0 L855,1200 L845,1200 Z" 
+              d="M845,0 L855,0 L805,1200 L795,1200 Z" 
               fill="white" 
               opacity="0.8" 
             />
@@ -47,7 +47,7 @@ const PlotMap = () => {
             <g transform="skewY(-5)">
               <PlotRow
                 plots={[6, 5, 4, 3, 2, 1]}
-                transform="translate(50, 0)"
+                transform="translate(150, 0)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
@@ -55,18 +55,18 @@ const PlotMap = () => {
               
               {/* 9M Road */}
               <path 
-                d="M0,120 L850,120 L850,160 L0,160 Z" 
+                d="M100,120 L800,120 L800,160 L100,160 Z" 
                 fill="#787878" 
               />
               <path 
-                d="M0,135 L850,135 L850,145 L0,145 Z" 
+                d="M100,135 L800,135 L800,145 L100,145 Z" 
                 fill="white" 
                 opacity="0.8" 
               />
               
               <PlotRow
                 plots={[11, 10, 9, 8, 7]}
-                transform="translate(50, 160)"
+                transform="translate(150, 160)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
@@ -74,18 +74,18 @@ const PlotMap = () => {
               
               {/* 9M Road */}
               <path 
-                d="M0,280 L850,280 L850,320 L0,320 Z" 
+                d="M100,280 L800,280 L800,320 L100,320 Z" 
                 fill="#787878" 
               />
               <path 
-                d="M0,295 L850,295 L850,305 L0,305 Z" 
+                d="M100,295 L800,295 L800,305 L100,305 Z" 
                 fill="white" 
                 opacity="0.8" 
               />
               
               <PlotRow
                 plots={[16, 15, 14, 13, 12]}
-                transform="translate(50, 320)"
+                transform="translate(150, 320)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
@@ -93,7 +93,7 @@ const PlotMap = () => {
               
               <PlotRow
                 plots={[21, 20, 19, 18, 17]}
-                transform="translate(50, 440)"
+                transform="translate(150, 440)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
@@ -101,18 +101,18 @@ const PlotMap = () => {
               
               {/* 9M Road */}
               <path 
-                d="M0,560 L850,560 L850,600 L0,600 Z" 
+                d="M100,560 L800,560 L800,600 L100,600 Z" 
                 fill="#787878" 
               />
               <path 
-                d="M0,575 L850,575 L850,585 L0,585 Z" 
+                d="M100,575 L800,575 L800,585 L100,585 Z" 
                 fill="white" 
                 opacity="0.8" 
               />
               
               <PlotRow
                 plots={[26, 25, 24, 23, 22]}
-                transform="translate(50, 600)"
+                transform="translate(150, 600)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
@@ -120,7 +120,7 @@ const PlotMap = () => {
               
               <PlotRow
                 plots={[31, 30, 29, 28, 27]}
-                transform="translate(50, 720)"
+                transform="translate(150, 720)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
@@ -129,11 +129,11 @@ const PlotMap = () => {
 
             {/* Corner Points Labels */}
             <g className="corner-points-labels" fill="#2F5233" fontSize="16" fontWeight="bold">
-              <text x="30" y="20">AA1</text>
-              <text x="920" y="20">AA2</text>
-              <text x="920" y="1180">AA3</text>
-              <text x="30" y="1180">AA4</text>
-              <text x="30" y="600">AA5</text>
+              <text x="130" y="20">AA1</text>
+              <text x="870" y="20">AA2</text>
+              <text x="820" y="1180">AA3</text>
+              <text x="130" y="1180">AA4</text>
+              <text x="130" y="600">AA5</text>
             </g>
 
             {/* Road Labels */}
@@ -141,7 +141,7 @@ const PlotMap = () => {
               <text x="425" y="145" fontSize="14" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
               <text x="425" y="305" fontSize="14" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
               <text x="425" y="585" fontSize="14" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
-              <text x="900" y="600" fontSize="14" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,900,600)">32M WIDE ROAD</text>
+              <text x="850" y="600" fontSize="14" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,850,600)">32M WIDE ROAD</text>
             </g>
           </svg>
 
