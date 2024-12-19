@@ -83,6 +83,35 @@ const Hero = () => {
               </div>
             </div>
           </CarouselItem>
+
+          {/* Third slide - New detailed plot layout view */}
+          <CarouselItem>
+            <div 
+              className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-cover bg-center"
+              style={{ 
+                backgroundImage: 'url("/lovable-uploads/f137931d-8aa1-4652-9372-3d24ddc1b06b.png")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="container relative z-10 text-center text-white px-4 md:px-0">
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 animate-float">
+                  Plot Layout Overview
+                </h1>
+                <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-2xl mx-auto">
+                  Detailed view of all 31 plots with 9M wide internal roads
+                </p>
+                <Button
+                  size="lg"
+                  className="bg-sand text-forest hover:bg-sand-dark w-full md:w-auto"
+                  onClick={() => document.getElementById('plots')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View Available Plots <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious className="hidden md:flex" />
         <CarouselNext className="hidden md:flex" />
