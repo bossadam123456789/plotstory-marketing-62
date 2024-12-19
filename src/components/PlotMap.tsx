@@ -20,30 +20,36 @@ const PlotMap = () => {
   const [selectedPlot, setSelectedPlot] = useState<Plot | null>(null);
 
   return (
-    <div id="plots" className="container py-4 md:py-8">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 md:mb-6">Plot Layout</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="relative bg-sand/50 p-2 md:p-4 rounded-lg shadow-lg">
+    <div id="plots" className="container py-8 md:py-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-forest">Plot Layout</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="relative bg-sand/50 p-4 md:p-6 rounded-xl shadow-xl">
           <svg
             viewBox="0 0 1000 1200"
             className="w-full h-auto"
             style={{ maxHeight: "85vh" }}
           >
-            {/* Background */}
-            <rect x="0" y="0" width="1000" height="1200" fill="#f5f5dc" opacity="0.3" />
+            {/* Background with grid pattern */}
+            <defs>
+              <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#2F5233" strokeWidth="0.5" opacity="0.2"/>
+              </pattern>
+            </defs>
+            <rect x="0" y="0" width="1000" height="1200" fill="url(#grid)" />
             
-            {/* Main 32M Road - Angled */}
+            {/* Main 32M Road - Angled with better styling */}
             <path 
               d="M800,0 L900,0 L850,1200 L750,1200 Z" 
               fill="#787878" 
+              className="opacity-80"
             />
             <path 
               d="M845,0 L855,0 L805,1200 L795,1200 Z" 
               fill="white" 
-              opacity="0.8" 
+              className="opacity-90"
             />
 
-            {/* Plot Rows - Each transformed to create the angled layout */}
+            {/* Plot Rows with enhanced styling */}
             <g transform="skewY(-5)">
               <PlotRow
                 plots={[6, 5, 4, 3, 2, 1]}
@@ -128,37 +134,44 @@ const PlotMap = () => {
 
             </g>
 
-            {/* Corner Points Labels */}
-            <g className="corner-points-labels" fill="#2F5233" fontSize="16" fontWeight="bold">
-              <text x="130" y="20">AA1</text>
-              <text x="870" y="20">AA2</text>
-              <text x="820" y="1180">AA3</text>
-              <text x="130" y="1180">AA4</text>
-              <text x="130" y="600">AA5</text>
+            {/* Enhanced Corner Points Labels */}
+            <g className="corner-points-labels" fill="#2F5233" fontSize="18" fontWeight="bold">
+              <text x="130" y="20" className="drop-shadow-sm">AA1</text>
+              <text x="870" y="20" className="drop-shadow-sm">AA2</text>
+              <text x="820" y="1180" className="drop-shadow-sm">AA3</text>
+              <text x="130" y="1180" className="drop-shadow-sm">AA4</text>
+              <text x="130" y="600" className="drop-shadow-sm">AA5</text>
             </g>
 
-            {/* Road Labels */}
+            {/* Enhanced Road Labels */}
             <g className="road-labels">
-              <text x="425" y="145" fontSize="14" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
-              <text x="425" y="305" fontSize="14" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
-              <text x="425" y="585" fontSize="14" fontWeight="600" fill="#333" textAnchor="middle">9M WIDE ROAD</text>
-              <text x="850" y="600" fontSize="14" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,850,600)">32M WIDE ROAD</text>
+              <text x="425" y="145" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle" className="drop-shadow-sm">9M WIDE ROAD</text>
+              <text x="425" y="305" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle" className="drop-shadow-sm">9M WIDE ROAD</text>
+              <text x="425" y="585" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle" className="drop-shadow-sm">9M WIDE ROAD</text>
+              <text x="850" y="600" fontSize="16" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,850,600)" className="drop-shadow-sm">32M WIDE ROAD</text>
+            </g>
+
+            {/* Compass Rose */}
+            <g transform="translate(100,100) scale(0.5)">
+              <circle cx="0" cy="0" r="30" fill="#2F5233" opacity="0.1"/>
+              <path d="M0,-40 L10,-10 L-10,-10 Z" fill="#2F5233"/>
+              <text x="0" y="-45" textAnchor="middle" fontSize="16" fill="#2F5233" fontWeight="bold">N</text>
             </g>
           </svg>
 
-          {/* Legend */}
-          <div className="mt-2 flex flex-wrap justify-center gap-2 md:gap-4 bg-white/90 p-2 rounded-lg shadow-sm">
-            <div className="flex items-center gap-1">
-              <div className="w-3 h-3 bg-forest rounded"></div>
-              <span className="text-xs md:text-sm">Available</span>
+          {/* Enhanced Legend */}
+          <div className="mt-4 flex flex-wrap justify-center gap-4 bg-white/95 p-4 rounded-lg shadow-lg">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-forest rounded-sm"></div>
+              <span className="text-sm md:text-base font-medium">Available</span>
             </div>
-            <div className="flex items-center gap-1">
-              <div className="w-3 h-3 bg-[#FEF7CD] border border-black/10 rounded"></div>
-              <span className="text-xs md:text-sm">Premium (35k USD)</span>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-[#FEF7CD] border border-black/10 rounded-sm"></div>
+              <span className="text-sm md:text-base font-medium">Premium (35k USD)</span>
             </div>
-            <div className="flex items-center gap-1">
-              <div className="w-3 h-3 bg-[#ea384c] rounded"></div>
-              <span className="text-xs md:text-sm">Sold</span>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-[#ea384c] rounded-sm"></div>
+              <span className="text-sm md:text-base font-medium">Sold</span>
             </div>
           </div>
         </div>
