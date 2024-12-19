@@ -64,35 +64,35 @@ const PlotMap = () => {
             />
             <PlotRow
               plots={[11, 10, 9, 8, 7]}
-              transform="translate(0, 140)"
+              transform="translate(0, 200)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[12, 13, 14, 15, 16]}
-              transform="translate(0, 540)"
+              transform="translate(0, 600)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[21, 20, 19, 18, 17]}
-              transform="translate(0, 680)"
+              transform="translate(0, 740)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[22, 23, 24, 25, 26]}
-              transform="translate(0, 940)"
+              transform="translate(0, 1000)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
             />
             <PlotRow
               plots={[31, 30, 29, 28, 27]}
-              transform="translate(0, 1080)"
+              transform="translate(0, 1140)"
               onPlotSelect={setSelectedPlot}
               allPlots={plots}
               getPlotColor={getPlotColor}
