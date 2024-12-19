@@ -16,9 +16,8 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
       {plots.map((num, index) => {
         const plot = allPlots[num - 1];
         const isMainRoadPlot = mainRoadPlots.includes(num);
-        // Adjust width for plots touching the main road
-        const width = isMainRoadPlot ? 170 : 140;
-        const x = index * (isMainRoadPlot ? 170 : 140);
+        const width = isMainRoadPlot ? 170 : 130;
+        const x = index * (isMainRoadPlot ? 170 : 130);
         
         return (
           <g
@@ -30,17 +29,17 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
               x={x}
               y={0}
               width={width}
-              height={140}
+              height={120}
               fill={getPlotColor(plot.status, plot.id)}
               stroke="#000"
               strokeWidth="1"
             />
             <text
               x={x + width/2}
-              y={70}
+              y={60}
               fill={plot.isPrime ? "#000" : "white"}
               textAnchor="middle"
-              fontSize="18"
+              fontSize="16"
               fontWeight="600"
             >
               {num}
@@ -48,10 +47,10 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
             {plot.isPrime && (
               <text
                 x={x + width/2}
-                y={90}
+                y={80}
                 fill="#000"
                 textAnchor="middle"
-                fontSize="14"
+                fontSize="12"
                 fontWeight="500"
               >
                 35k USD
