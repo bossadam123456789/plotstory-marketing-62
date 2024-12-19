@@ -19,10 +19,10 @@ const PlotMap = () => {
   const [selectedPlot, setSelectedPlot] = useState<Plot | null>(null);
 
   return (
-    <div id="plots" className="container py-16">
-      <h2 className="text-4xl font-bold text-center mb-12">Plot Layout</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="relative bg-sand/50 p-6 rounded-lg shadow-lg">
+    <div id="plots" className="container py-8 md:py-16 px-4 md:px-6">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Plot Layout</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+        <div className="relative bg-sand/50 p-4 md:p-6 rounded-lg shadow-lg">
           <svg
             viewBox="0 0 1000 1400"
             className="w-full h-auto"
@@ -114,17 +114,17 @@ const PlotMap = () => {
           </svg>
 
           {/* Legend */}
-          <div className="mt-6 flex justify-center gap-8 bg-white/90 p-4 rounded-lg shadow-sm">
+          <div className="mt-4 md:mt-6 flex flex-wrap justify-center gap-4 md:gap-8 bg-white/90 p-3 md:p-4 rounded-lg shadow-sm">
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-forest rounded"></div>
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-forest rounded"></div>
               <span className="text-sm">Available</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-[#FEF7CD] border border-black/10 rounded"></div>
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-[#FEF7CD] border border-black/10 rounded"></div>
               <span className="text-sm">Premium (25k USD)</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-[#ea384c] rounded"></div>
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-[#ea384c] rounded"></div>
               <span className="text-sm">Sold</span>
             </div>
           </div>

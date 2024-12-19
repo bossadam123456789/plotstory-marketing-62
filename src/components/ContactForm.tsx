@@ -23,10 +23,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-sand py-16">
-      <div className="container max-w-2xl">
-        <h2 className="text-4xl font-bold text-center mb-8">Contact Us</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="bg-sand py-8 md:py-16">
+      <div className="container max-w-2xl px-4 md:px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-8">Contact Us</h2>
+        <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
               placeholder="Your Name"
@@ -62,12 +62,12 @@ const ContactForm = () => {
               setFormData({ ...formData, message: e.target.value })
             }
             required
-            className="min-h-[150px]"
+            className="min-h-[120px] md:min-h-[150px]"
           />
           <Button
             type="submit"
             size="lg"
-            className="w-full bg-forest hover:bg-forest-light"
+            className="w-full bg-forest hover:bg-forest-light text-base md:text-lg py-6"
           >
             Send Inquiry
           </Button>
