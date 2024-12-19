@@ -1,35 +1,80 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Hero = () => {
   return (
     <div className="relative">
-      {/* First image - Aerial view */}
-      <div 
-        className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-cover bg-center"
-        style={{ 
-          backgroundImage: 'url("/lovable-uploads/d68412fd-1bcd-4b39-860f-02b30255e58a.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="container relative z-10 text-center text-white px-4 md:px-0">
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 animate-float">
-            Premium Land Plots
-          </h1>
-          <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-2xl mx-auto">
-            31 exclusive plots spread across 4 acres of prime real estate, connected by well-planned 9M wide roads
-          </p>
-          <Button
-            size="lg"
-            className="bg-sand text-forest hover:bg-sand-dark w-full md:w-auto"
-            onClick={() => document.getElementById('plots')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            View Available Plots <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      </div>
+      {/* Hero Carousel */}
+      <Carousel className="relative">
+        <CarouselContent>
+          {/* First slide - Original aerial view */}
+          <CarouselItem>
+            <div 
+              className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-cover bg-center"
+              style={{ 
+                backgroundImage: 'url("/lovable-uploads/d68412fd-1bcd-4b39-860f-02b30255e58a.png")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="container relative z-10 text-center text-white px-4 md:px-0">
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 animate-float">
+                  Premium Land Plots
+                </h1>
+                <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-2xl mx-auto">
+                  31 exclusive plots spread across 4 acres of prime real estate, connected by well-planned 9M wide roads
+                </p>
+                <Button
+                  size="lg"
+                  className="bg-sand text-forest hover:bg-sand-dark w-full md:w-auto"
+                  onClick={() => document.getElementById('plots')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View Available Plots <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </CarouselItem>
+
+          {/* Second slide - New aerial view with plot layout */}
+          <CarouselItem>
+            <div 
+              className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-cover bg-center"
+              style={{ 
+                backgroundImage: 'url("/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="container relative z-10 text-center text-white px-4 md:px-0">
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 animate-float">
+                  Strategic Location
+                </h1>
+                <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-2xl mx-auto">
+                  Prime plots with excellent accessibility via 32M wide main road
+                </p>
+                <Button
+                  size="lg"
+                  className="bg-sand text-forest hover:bg-sand-dark w-full md:w-auto"
+                  onClick={() => document.getElementById('plots')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View Available Plots <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious className="hidden md:flex" />
+        <CarouselNext className="hidden md:flex" />
+      </Carousel>
 
       {/* Property Description */}
       <div className="container mx-auto py-8 md:py-12 px-4 md:px-6">
