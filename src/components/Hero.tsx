@@ -7,12 +7,24 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import React from "react";
 
 const Hero = () => {
+  const plugin = React.useMemo(
+    () => 
+      Autoplay({ delay: 2000, stopOnInteraction: false }),
+    []
+  );
+
   return (
     <div className="relative">
       {/* Hero Carousel */}
-      <Carousel className="relative" opts={{ loop: true, duration: 2000 }} autoPlay={true}>
+      <Carousel 
+        className="relative" 
+        opts={{ loop: true }} 
+        plugins={[plugin]}
+      >
         <CarouselContent>
           {/* First slide - Original aerial view */}
           <CarouselItem>
