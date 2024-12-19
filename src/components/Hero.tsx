@@ -3,8 +3,17 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-forest to-forest-light text-white">
-      <div className="absolute inset-0 bg-black/40" />
+    <div 
+      className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center"
+      style={{ 
+        backgroundImage: 'url("/lovable-uploads/1b5d436e-04ee-486f-b4af-767a490451a0.png")',
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundColor: '#f5f5f5'
+      }}
+    >
+      <div className="absolute inset-0 bg-black/60" />
       <div className="container relative z-10 text-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-float">
           Premium Land Plots
