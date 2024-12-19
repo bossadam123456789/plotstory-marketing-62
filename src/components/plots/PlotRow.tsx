@@ -13,13 +13,10 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
 
   return (
     <g transform={transform}>
-      {plots.map((num, col) => {
+      {plots.map((num, index) => {
         const plot = allPlots[num - 1];
         const isSpecialPlot = specialPlots.includes(num);
-        
-        // Removed the additional 100 offset, now plots will be directly adjacent
-        const xOffset = col * 100;
-        const x = xOffset;
+        const x = index * 142;
         
         return (
           <g
@@ -29,16 +26,16 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
           >
             <rect
               x={x}
-              y={50}
-              width="100"
-              height="120"
+              y={0}
+              width="142"
+              height="140"
               fill={getPlotColor(plot.status, plot.id)}
               stroke="#000"
               strokeWidth="1"
             />
             <text
-              x={x + 50}
-              y={110}
+              x={x + 71}
+              y={70}
               fill={isSpecialPlot ? "#000" : "white"}
               textAnchor="middle"
               fontSize="18"
@@ -48,8 +45,8 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
             </text>
             {isSpecialPlot && (
               <text
-                x={x + 50}
-                y={130}
+                x={x + 71}
+                y={90}
                 fill="#000"
                 textAnchor="middle"
                 fontSize="14"
