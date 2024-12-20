@@ -47,24 +47,24 @@ const Hero = () => {
             plugins={[plugin]}
           >
             <CarouselContent>
-              {/* Main Aerial View */}
-              <CarouselItem>
-                <div 
-                  className="relative min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
-                  style={{ 
-                    backgroundImage: 'url("/lovable-uploads/76efbbcf-7e38-41f7-96cf-128df8a95233.png")',
-                  }}
-                >
-                  <div className="absolute inset-0 bg-black/20" />
-                </div>
-              </CarouselItem>
-
               {/* Strategic Location Slide */}
               <CarouselItem>
                 <div 
                   className="relative min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
                   style={{ 
                     backgroundImage: 'url("/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png")',
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/20" />
+                </div>
+              </CarouselItem>
+
+              {/* Main Aerial View */}
+              <CarouselItem>
+                <div 
+                  className="relative min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
+                  style={{ 
+                    backgroundImage: 'url("/lovable-uploads/76efbbcf-7e38-41f7-96cf-128df8a95233.png")',
                   }}
                 >
                   <div className="absolute inset-0 bg-black/20" />
