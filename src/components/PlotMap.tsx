@@ -52,7 +52,7 @@ const PlotMap = () => {
             {/* Plot Rows with enhanced styling */}
             <g transform="translate(50, 50) skewY(-5)">
               <PlotRow
-                plots={[6, 5, 4, 3, 2, 1]}
+                plots={[1, 2, 3, 4, 5, 6]}
                 transform="translate(200, 0)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
@@ -131,6 +131,7 @@ const PlotMap = () => {
                 allPlots={plots}
                 getPlotColor={getPlotColor}
               />
+
             </g>
 
             {/* Enhanced Corner Points Labels */}
