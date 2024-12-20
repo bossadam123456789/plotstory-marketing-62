@@ -110,8 +110,8 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div>
             <img 
-              src="/lovable-uploads/5facca90-233e-4e32-b698-9670f5dfe243.png" 
-              alt="Plot Layout Overview"
+              src="/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png" 
+              alt="Strategic Location"
               className="w-full h-[400px] object-cover rounded-lg shadow-sm"
             />
           </div>
