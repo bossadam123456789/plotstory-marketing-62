@@ -37,61 +37,61 @@ const PlotMap = () => {
             </defs>
             <rect x="0" y="0" width="1200" height="1400" fill="url(#grid)" />
             
-            {/* Main 32M Road - Angled with better styling */}
+            {/* Main 32M Road - Adjusted position and styling */}
             <path 
-              d="M1000,0 L1100,0 L1050,1400 L950,1400 Z" 
+              d="M1050,0 L1150,0 L1100,1400 L1000,1400 Z" 
               fill="#787878" 
               className="opacity-80"
             />
             <path 
-              d="M1045,0 L1055,0 L1005,1400 L995,1400 Z" 
+              d="M1095,0 L1105,0 L1055,1400 L1045,1400 Z" 
               fill="white" 
               className="opacity-90"
             />
 
-            {/* Plot Rows with enhanced styling */}
-            <g transform="translate(50, 50) skewY(-5)">
+            {/* Plot Rows with enhanced styling and alignment */}
+            <g transform="translate(100, 50) skewY(-3)">
               <PlotRow
                 plots={[1, 2, 3, 4, 5, 6]}
-                transform="translate(200, 0)"
+                transform="translate(250, 0)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
               />
               
-              {/* 9M Road */}
+              {/* 9M Road - Adjusted position */}
               <path 
-                d="M150,140 L950,140 L950,180 L150,180 Z" 
+                d="M200,140 L1000,140 L1000,180 L200,180 Z" 
                 fill="#787878" 
               />
               <path 
-                d="M150,155 L950,155 L950,165 L150,165 Z" 
+                d="M200,155 L1000,155 L1000,165 L200,165 Z" 
                 fill="white" 
                 opacity="0.8" 
               />
               
               <PlotRow
                 plots={[11, 10, 9, 8, 7]}
-                transform="translate(200, 180)"
+                transform="translate(250, 180)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
               />
               
-              {/* 9M Road */}
+              {/* 9M Road - Adjusted position */}
               <path 
-                d="M150,320 L950,320 L950,360 L150,360 Z" 
+                d="M200,320 L1000,320 L1000,360 L200,360 Z" 
                 fill="#787878" 
               />
               <path 
-                d="M150,335 L950,335 L950,345 L150,345 Z" 
+                d="M200,335 L1000,335 L1000,345 L200,345 Z" 
                 fill="white" 
                 opacity="0.8" 
               />
               
               <PlotRow
                 plots={[16, 15, 14, 13, 12]}
-                transform="translate(200, 360)"
+                transform="translate(250, 360)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
@@ -99,26 +99,26 @@ const PlotMap = () => {
               
               <PlotRow
                 plots={[21, 20, 19, 18, 17]}
-                transform="translate(200, 500)"
+                transform="translate(250, 500)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
               />
               
-              {/* 9M Road */}
+              {/* 9M Road - Adjusted position */}
               <path 
-                d="M150,640 L950,640 L950,680 L150,680 Z" 
+                d="M200,640 L1000,640 L1000,680 L200,680 Z" 
                 fill="#787878" 
               />
               <path 
-                d="M150,655 L950,655 L950,665 L150,665 Z" 
+                d="M200,655 L1000,655 L1000,665 L200,665 Z" 
                 fill="white" 
                 opacity="0.8" 
               />
               
               <PlotRow
                 plots={[26, 25, 24, 23, 22]}
-                transform="translate(200, 680)"
+                transform="translate(250, 680)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
@@ -126,29 +126,28 @@ const PlotMap = () => {
               
               <PlotRow
                 plots={[31, 30, 29, 28, 27]}
-                transform="translate(200, 820)"
+                transform="translate(250, 820)"
                 onPlotSelect={setSelectedPlot}
                 allPlots={plots}
                 getPlotColor={getPlotColor}
               />
-
             </g>
 
             {/* Enhanced Corner Points Labels */}
             <g className="corner-points-labels" fill="#2F5233" fontSize="18" fontWeight="bold">
-              <text x="180" y="70" className="drop-shadow-sm">AA1</text>
-              <text x="1070" y="70" className="drop-shadow-sm">AA2</text>
-              <text x="1020" y="1380" className="drop-shadow-sm">AA3</text>
-              <text x="180" y="1380" className="drop-shadow-sm">AA4</text>
-              <text x="180" y="700" className="drop-shadow-sm">AA5</text>
+              <text x="230" y="70" className="drop-shadow-sm">AA1</text>
+              <text x="1120" y="70" className="drop-shadow-sm">AA2</text>
+              <text x="1070" y="1380" className="drop-shadow-sm">AA3</text>
+              <text x="230" y="1380" className="drop-shadow-sm">AA4</text>
+              <text x="230" y="700" className="drop-shadow-sm">AA5</text>
             </g>
 
             {/* Enhanced Road Labels */}
             <g className="road-labels">
-              <text x="525" y="165" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle" className="drop-shadow-sm">9M WIDE ROAD</text>
-              <text x="525" y="345" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle" className="drop-shadow-sm">9M WIDE ROAD</text>
-              <text x="525" y="665" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle" className="drop-shadow-sm">9M WIDE ROAD</text>
-              <text x="1050" y="700" fontSize="16" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,1050,700)" className="drop-shadow-sm">32M WIDE ROAD</text>
+              <text x="575" y="165" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle" className="drop-shadow-sm">9M WIDE ROAD</text>
+              <text x="575" y="345" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle" className="drop-shadow-sm">9M WIDE ROAD</text>
+              <text x="575" y="665" fontSize="16" fontWeight="600" fill="#333" textAnchor="middle" className="drop-shadow-sm">9M WIDE ROAD</text>
+              <text x="1100" y="700" fontSize="16" fontWeight="600" fill="white" textAnchor="middle" transform="rotate(90,1100,700)" className="drop-shadow-sm">32M WIDE ROAD</text>
             </g>
 
             {/* Compass Rose */}
@@ -159,7 +158,7 @@ const PlotMap = () => {
             </g>
           </svg>
 
-          {/* Enhanced Legend */}
+          {/* Legend */}
           <div className="mt-4 flex flex-wrap justify-center gap-4 bg-white/95 p-4 rounded-lg shadow-lg">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-forest rounded-sm"></div>
