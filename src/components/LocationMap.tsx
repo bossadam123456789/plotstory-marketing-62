@@ -14,13 +14,13 @@ const LocationMap = () => {
     mapboxgl.accessToken = mapboxToken;
     
     // Explicitly type the coordinates as [number, number]
-    const syokimauCoordinates: [number, number] = [36.9750, -1.3833]; // Longitude, Latitude for Syokimau
+    const coordinates: [number, number] = [36.97661590576172, -1.3647876977920532]; // Longitude, Latitude
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
-      center: syokimauCoordinates,
-      zoom: 14,
+      center: coordinates,
+      zoom: 17,
     });
 
     // Add navigation controls
@@ -28,7 +28,7 @@ const LocationMap = () => {
 
     // Add marker for the location
     new mapboxgl.Marker()
-      .setLngLat(syokimauCoordinates)
+      .setLngLat(coordinates)
       .addTo(map.current);
 
     return () => {
