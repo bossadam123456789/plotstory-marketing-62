@@ -1,28 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { toast } from './ui/use-toast';
 
 const LocationMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState('');
 
   useEffect(() => {
-    if (!mapContainer.current || !mapboxToken) return;
+    if (!mapContainer.current) return;
 
-    // Validate token format
-    if (!mapboxToken.startsWith('pk.')) {
-      toast({
-        title: "Invalid Mapbox Token",
-        description: "Please use a public access token that starts with 'pk.' You can get one from your Mapbox account.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    mapboxgl.accessToken = mapboxToken;
+    // Replace this with your actual Mapbox public token
+    mapboxgl.accessToken = 'pk.YOUR_MAPBOX_PUBLIC_TOKEN';
     
     // Explicitly type the coordinates as [number, number]
     const coordinates: [number, number] = [36.97661590576172, -1.3647876977920532]; // Longitude, Latitude
@@ -45,7 +34,7 @@ const LocationMap = () => {
     return () => {
       map.current?.remove();
     };
-  }, [mapboxToken]);
+  }, []);
 
   return (
     <Card className="w-full">
@@ -53,27 +42,9 @@ const LocationMap = () => {
         <CardTitle className="text-2xl font-bold">Location</CardTitle>
       </CardHeader>
       <CardContent>
-        {!mapboxToken ? (
-          <div className="space-y-4">
-            <p className="text-muted-foreground">Please enter your Mapbox public token (starts with pk.*) to view the map:</p>
-            <input
-              type="text"
-              className="w-full p-2 border rounded"
-              placeholder="Enter Mapbox public token (pk.*)"
-              onChange={(e) => setMapboxToken(e.target.value)}
-            />
-            <p className="text-sm text-muted-foreground">
-              You can get your public token from{' '}
-              <a href="https://account.mapbox.com/access-tokens/" target="_blank" rel="noopener noreferrer" className="text-primary underline">
-                Mapbox Access Tokens Page
-              </a>
-            </p>
-          </div>
-        ) : (
-          <div className="w-full h-[400px] rounded-lg overflow-hidden">
-            <div ref={mapContainer} className="w-full h-full" />
-          </div>
-        )}
+        <div className="w-full h-[400px] rounded-lg overflow-hidden">
+          <div ref={mapContainer} className="w-full h-full" />
+        </div>
       </CardContent>
     </Card>
   );
