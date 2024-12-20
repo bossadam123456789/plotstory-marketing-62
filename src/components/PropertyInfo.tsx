@@ -46,7 +46,7 @@ const PropertyInfo = () => {
             </div>
             <div className="p-3 rounded-lg bg-muted">
               <p className="text-sm text-gray-600 uppercase tracking-wider">Plot Sizes</p>
-              <p className="text-xl font-semibold mt-1">Starting from 501.7 square meters</p>
+              <p className="text-xl font-semibold mt-1">464.5 square meters (50 x 100 feet)</p>
             </div>
             <div className="p-3 rounded-lg bg-muted">
               <p className="text-sm text-gray-600 uppercase tracking-wider">Road Width</p>
