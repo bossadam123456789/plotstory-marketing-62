@@ -19,90 +19,53 @@ const Hero = () => {
 
   return (
     <div className="relative bg-white">
+      {/* Text Content Section */}
+      <div className="container mx-auto py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-light mb-6 tracking-tight text-primary">
+            Premium Land Plots
+          </h1>
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-light tracking-wide text-secondary">
+            31 exclusive plots spread across 4 acres of prime real estate
+          </p>
+          <Button
+            size="lg"
+            className="bg-primary text-white hover:bg-primary/90 text-base tracking-wide"
+            onClick={() => document.getElementById('plots')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            View Available Plots <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+
+      {/* Image Carousel Section */}
       <Carousel 
         className="relative" 
         opts={{ loop: true }} 
         plugins={[plugin]}
       >
         <CarouselContent>
-          {/* First slide */}
+          {/* Strategic Location Slide */}
           <CarouselItem>
             <div 
-              className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center"
-              style={{ 
-                backgroundImage: 'url("/lovable-uploads/d68412fd-1bcd-4b39-860f-02b30255e58a.png")',
-              }}
-            >
-              <div className="absolute inset-0 bg-black/20" />
-              <div className="container relative z-10 text-center text-white px-4 md:px-0">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-light mb-6 tracking-tight">
-                  Premium Land Plots
-                </h1>
-                <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-light tracking-wide">
-                  31 exclusive plots spread across 4 acres of prime real estate
-                </p>
-                <Button
-                  size="lg"
-                  className="bg-white/90 text-primary hover:bg-white text-base tracking-wide"
-                  onClick={() => document.getElementById('plots')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  View Available Plots <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-          </CarouselItem>
-
-          {/* Second slide */}
-          <CarouselItem>
-            <div 
-              className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center"
+              className="relative min-h-[60vh] bg-cover bg-center"
               style={{ 
                 backgroundImage: 'url("/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png")',
               }}
             >
               <div className="absolute inset-0 bg-black/20" />
-              <div className="container relative z-10 text-center text-white px-4 md:px-0">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-light mb-6 tracking-tight">
-                  Strategic Location
-                </h1>
-                <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-light tracking-wide">
-                  Prime plots with excellent accessibility
-                </p>
-                <Button
-                  size="lg"
-                  className="bg-white/90 text-primary hover:bg-white text-base tracking-wide"
-                  onClick={() => document.getElementById('plots')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  View Available Plots <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
             </div>
           </CarouselItem>
 
-          {/* Third slide */}
+          {/* Plot Layout Overview Slide */}
           <CarouselItem>
             <div 
-              className="relative min-h-[80vh] flex items-center justify-center bg-cover bg-center"
+              className="relative min-h-[60vh] bg-cover bg-center"
               style={{ 
                 backgroundImage: 'url("/lovable-uploads/f137931d-8aa1-4652-9372-3d24ddc1b06b.png")',
               }}
             >
               <div className="absolute inset-0 bg-black/20" />
-              <div className="container relative z-10 text-center text-white px-4 md:px-0">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-light mb-6 tracking-tight">
-                  Plot Layout Overview
-                </h1>
-                <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-light tracking-wide">
-                  Well-planned layout with 9M wide internal roads
-                </p>
-                <Button
-                  size="lg"
-                  className="bg-white/90 text-primary hover:bg-white text-base tracking-wide"
-                  onClick={() => document.getElementById('plots')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  View Available Plots <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
             </div>
           </CarouselItem>
         </CarouselContent>
