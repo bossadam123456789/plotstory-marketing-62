@@ -19,16 +19,16 @@ export default {
     },
     extend: {
       colors: {
-        primary: "#2C3E50",
-        secondary: "#ECF0F1",
-        accent: "#3498DB",
-        background: "#FFFFFF",
-        foreground: "#2C3E50",
+        primary: "#333333",
+        secondary: "#666666",
+        accent: "#0066cc",
+        background: "#ffffff",
+        foreground: "#333333",
         muted: {
-          DEFAULT: "#F5F6F7",
-          foreground: "#95A5A6",
+          DEFAULT: "#f5f5f5",
+          foreground: "#666666",
         },
-        border: "#E5E7EB",
+        border: "#e5e5e5",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
