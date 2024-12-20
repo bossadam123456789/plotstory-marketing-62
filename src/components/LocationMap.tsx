@@ -13,7 +13,8 @@ const LocationMap = () => {
 
     mapboxgl.accessToken = mapboxToken;
     
-    const syokimauCoordinates = [36.9750, -1.3833]; // Longitude, Latitude for Syokimau
+    // Explicitly type the coordinates as [number, number]
+    const syokimauCoordinates: [number, number] = [36.9750, -1.3833]; // Longitude, Latitude for Syokimau
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
