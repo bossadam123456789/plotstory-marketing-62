@@ -19,43 +19,30 @@ export default {
     },
     extend: {
       colors: {
-        forest: {
-          DEFAULT: "#2F5233",
-          light: "#3A6640",
+        primary: {
+          DEFAULT: "#9b87f5",
+          dark: "#7E69AB",
+          light: "#D6BCFA",
         },
-        sand: {
-          DEFAULT: "#F5F5DC",
-          dark: "#E5E5C5",
+        secondary: {
+          DEFAULT: "#FEF7CD",
+          dark: "#FEC6A1",
+          light: "#FFDEE2",
+        },
+        accent: {
+          DEFAULT: "#E5DEFF",
+          dark: "#6E59A5",
+          light: "#F2FCE2",
+        },
+        background: "#FFFFFF",
+        foreground: "#1A1F2C",
+        muted: {
+          DEFAULT: "#F1F0FB",
+          foreground: "#8E9196",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -83,6 +70,10 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 3s ease-in-out infinite",
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%)',
+        'gradient-secondary': 'linear-gradient(90deg, hsla(46, 73%, 75%, 1) 0%, hsla(176, 73%, 88%, 1) 100%)',
       },
     },
   },
