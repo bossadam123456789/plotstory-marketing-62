@@ -51,8 +51,9 @@ const VideoPresentation = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-center text-secondary max-w-5xl mx-auto leading-tight"
+              className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-center text-secondary max-w-5xl mx-auto leading-tight space-y-2"
             >
+              <div className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-primary/80 font-light mb-2">Syokimau Land For Sale</div>
               Adam Boss Mtaa
             </motion.h1>
             <motion.div 
