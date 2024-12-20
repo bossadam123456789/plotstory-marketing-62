@@ -68,6 +68,13 @@ const VideoPresentation = () => {
                 <CarouselContent>
                   <CarouselItem>
                     <img 
+                      src="/lovable-uploads/5d3dc6c9-13f3-43e7-8e32-6638c87553d5.png"
+                      alt="Aerial View"
+                      className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img 
                       src="/lovable-uploads/d95bb8df-a8d3-45ba-abab-29137683fdfb.png"
                       alt="Plot Layout Plan"
                       className="w-full h-full object-cover rounded-2xl shadow-2xl"
