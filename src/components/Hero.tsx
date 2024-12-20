@@ -58,18 +58,6 @@ const Hero = () => {
                   <div className="absolute inset-0 bg-black/20" />
                 </div>
               </CarouselItem>
-
-              {/* Main Aerial View */}
-              <CarouselItem>
-                <div 
-                  className="relative min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
-                  style={{ 
-                    backgroundImage: 'url("/lovable-uploads/76efbbcf-7e38-41f7-96cf-128df8a95233.png")',
-                  }}
-                >
-                  <div className="absolute inset-0 bg-black/20" />
-                </div>
-              </CarouselItem>
             </CarouselContent>
             <CarouselPrevious className="hidden md:flex" />
             <CarouselNext className="hidden md:flex" />
@@ -122,15 +110,15 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div>
             <img 
-              src="/lovable-uploads/76efbbcf-7e38-41f7-96cf-128df8a95233.png" 
-              alt="Aerial View of Plot"
+              src="/lovable-uploads/5facca90-233e-4e32-b698-9670f5dfe243.png" 
+              alt="Plot Layout Overview"
               className="w-full h-[400px] object-cover rounded-lg shadow-sm"
             />
           </div>
           <div>
             <img 
-              src="/lovable-uploads/5facca90-233e-4e32-b698-9670f5dfe243.png" 
-              alt="Plot Layout Overview"
+              src="/lovable-uploads/d95bb8df-a8d3-45ba-abab-29137683fdfb.png" 
+              alt="Plot Layout Plan"
               className="w-full h-[400px] object-cover rounded-lg shadow-sm"
             />
           </div>
