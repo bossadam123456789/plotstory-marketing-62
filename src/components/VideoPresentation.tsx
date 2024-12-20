@@ -51,7 +51,7 @@ const VideoPresentation = () => {
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-center text-secondary max-w-5xl mx-auto leading-tight"
             >
-              Premium Plots in Syokimau, Mavoko
+              Adam Boss Mtaa
             </motion.h1>
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
