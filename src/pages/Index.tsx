@@ -3,6 +3,7 @@ import PlotMap from "@/components/PlotMap";
 import PropertyInfo from "@/components/PropertyInfo";
 import ContactForm from "@/components/ContactForm";
 import VideoPresentation from "@/components/VideoPresentation";
+import LocationMap from "@/components/LocationMap";
 
 const Index = () => {
   return (
@@ -12,6 +13,9 @@ const Index = () => {
         <Hero />
         <PropertyInfo />
         <PlotMap />
+        <div className="container mx-auto px-4 py-16">
+          <LocationMap />
+        </div>
         <ContactForm />
       </div>
     </main>
