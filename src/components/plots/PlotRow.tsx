@@ -9,7 +9,7 @@ interface PlotRowProps {
 }
 
 export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor }: PlotRowProps) => {
-  const mainRoadPlots = [6, 7, 16, 17, 26, 27]; // Added plot 6 back to mainRoadPlots
+  const mainRoadPlots = [7, 16, 17, 26, 27]; // Plot 6 is now handled separately
   let currentX = 0;
 
   return (
@@ -17,7 +17,9 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
       {plots.map((num) => {
         const plot = allPlots[num - 1];
         const isMainRoadPlot = mainRoadPlots.includes(num);
-        const width = isMainRoadPlot ? 170 : 130;
+        const isPlot6 = num === 6;
+        // Plot 6 gets a special width and positioning
+        const width = isPlot6 ? 130 : (isMainRoadPlot ? 170 : 130);
         const x = currentX;
         currentX += width;
         
