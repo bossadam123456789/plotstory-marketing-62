@@ -52,7 +52,7 @@ const Hero = () => {
                 <div 
                   className="relative min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
                   style={{ 
-                    backgroundImage: 'url("/lovable-uploads/2c5f8e54-df47-4ed3-9500-36c4edc70410.png")',
+                    backgroundImage: 'url("/lovable-uploads/76efbbcf-7e38-41f7-96cf-128df8a95233.png")',
                   }}
                 >
                   <div className="absolute inset-0 bg-black/20" />
@@ -122,7 +122,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div>
             <img 
-              src="/lovable-uploads/2c5f8e54-df47-4ed3-9500-36c4edc70410.png" 
+              src="/lovable-uploads/76efbbcf-7e38-41f7-96cf-128df8a95233.png" 
               alt="Aerial View of Plot"
               className="w-full h-[400px] object-cover rounded-lg shadow-sm"
             />
