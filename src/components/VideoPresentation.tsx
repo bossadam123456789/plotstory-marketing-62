@@ -150,9 +150,9 @@ const VideoPresentation = () => {
               <Button
                 size="lg"
                 className="w-full bg-secondary text-primary-dark hover:bg-secondary/90 text-base md:text-lg mt-4"
-                onClick={() => window.location.href = 'tel:0729113327'}
+                onClick={() => window.location.href = 'tel:+254729113327'}
               >
-                Call: 0729 113 327
+                Call: +254 729 113 327
               </Button>
             </motion.div>
           </div>
