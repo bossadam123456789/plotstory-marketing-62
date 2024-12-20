@@ -47,12 +47,12 @@ const Hero = () => {
             plugins={[plugin]}
           >
             <CarouselContent>
-              {/* Plot Layout Overview Slide */}
+              {/* Main Aerial View */}
               <CarouselItem>
                 <div 
                   className="relative min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
                   style={{ 
-                    backgroundImage: 'url("/lovable-uploads/f137931d-8aa1-4652-9372-3d24ddc1b06b.png")',
+                    backgroundImage: 'url("/lovable-uploads/2c5f8e54-df47-4ed3-9500-36c4edc70410.png")',
                   }}
                 >
                   <div className="absolute inset-0 bg-black/20" />
@@ -122,7 +122,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div>
             <img 
-              src="/lovable-uploads/cbe36140-3ab3-435c-ade8-be8e366a8961.png" 
+              src="/lovable-uploads/2c5f8e54-df47-4ed3-9500-36c4edc70410.png" 
               alt="Aerial View of Plot"
               className="w-full h-[400px] object-cover rounded-lg shadow-sm"
             />

@@ -9,7 +9,7 @@ interface PlotRowProps {
 }
 
 export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor }: PlotRowProps) => {
-  const mainRoadPlots = [6, 7, 16, 17, 26, 27];
+  const mainRoadPlots = [7, 16, 17, 26, 27]; // Removed plot 6 from mainRoadPlots
   let currentX = 0;
 
   return (
