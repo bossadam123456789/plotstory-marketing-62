@@ -39,39 +39,43 @@ const Hero = () => {
       </div>
 
       {/* Image Carousel Section */}
-      <Carousel 
-        className="relative" 
-        opts={{ loop: true }} 
-        plugins={[plugin]}
-      >
-        <CarouselContent>
-          {/* Strategic Location Slide */}
-          <CarouselItem>
-            <div 
-              className="relative min-h-[60vh] bg-cover bg-center"
-              style={{ 
-                backgroundImage: 'url("/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png")',
-              }}
-            >
-              <div className="absolute inset-0 bg-black/20" />
-            </div>
-          </CarouselItem>
+      <div className="bg-sand py-16">
+        <div className="container mx-auto px-4">
+          <Carousel 
+            className="relative max-w-6xl mx-auto" 
+            opts={{ loop: true }} 
+            plugins={[plugin]}
+          >
+            <CarouselContent>
+              {/* Plot Layout Overview Slide */}
+              <CarouselItem>
+                <div 
+                  className="relative min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
+                  style={{ 
+                    backgroundImage: 'url("/lovable-uploads/f137931d-8aa1-4652-9372-3d24ddc1b06b.png")',
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/20" />
+                </div>
+              </CarouselItem>
 
-          {/* Plot Layout Overview Slide */}
-          <CarouselItem>
-            <div 
-              className="relative min-h-[60vh] bg-cover bg-center"
-              style={{ 
-                backgroundImage: 'url("/lovable-uploads/f137931d-8aa1-4652-9372-3d24ddc1b06b.png")',
-              }}
-            >
-              <div className="absolute inset-0 bg-black/20" />
-            </div>
-          </CarouselItem>
-        </CarouselContent>
-        <CarouselPrevious className="hidden md:flex" />
-        <CarouselNext className="hidden md:flex" />
-      </Carousel>
+              {/* Strategic Location Slide */}
+              <CarouselItem>
+                <div 
+                  className="relative min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
+                  style={{ 
+                    backgroundImage: 'url("/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png")',
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/20" />
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+        </div>
+      </div>
 
       {/* Property Description */}
       <div className="container mx-auto py-16 px-4">
