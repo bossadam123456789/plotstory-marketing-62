@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -13,6 +13,16 @@ const ContactForm = () => {
     message: "",
   });
 
+  // Keep track of whether the message was set by plot selection
+  const [plotMessage, setPlotMessage] = useState("");
+
+  useEffect(() => {
+    // If message changes and it includes "plot number", update plotMessage
+    if (formData.message.includes("plot number")) {
+      setPlotMessage(formData.message);
+    }
+  }, [formData.message]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
@@ -20,6 +30,19 @@ const ContactForm = () => {
       description: "We'll get back to you as soon as possible.",
     });
     setFormData({ name: "", email: "", phone: "", message: "" });
+    setPlotMessage(""); // Reset plot message after submission
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+      // If it's the message field and we have a plot message, preserve it
+      message: id === "message" ? value : (plotMessage || prev.message),
+    }));
   };
 
   return (
@@ -37,9 +60,7 @@ const ContactForm = () => {
                   id="name"
                   placeholder="John Doe"
                   value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
+                  onChange={handleInputChange}
                   className="bg-white/50 border-primary/20 focus:border-primary"
                   required
                 />
@@ -53,9 +74,7 @@ const ContactForm = () => {
                   type="email"
                   placeholder="john@example.com"
                   value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
+                  onChange={handleInputChange}
                   className="bg-white/50 border-primary/20 focus:border-primary"
                   required
                 />
@@ -70,9 +89,7 @@ const ContactForm = () => {
                 type="tel"
                 placeholder="+254 XXX XXX XXX"
                 value={formData.phone}
-                onChange={(e) =>
-                  setFormData({ ...formData, phone: e.target.value })
-                }
+                onChange={handleInputChange}
                 className="bg-white/50 border-primary/20 focus:border-primary"
                 required
               />
@@ -84,10 +101,8 @@ const ContactForm = () => {
               <Textarea
                 id="message"
                 placeholder="Tell us about your interest..."
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
+                value={formData.message || plotMessage}
+                onChange={handleInputChange}
                 className="min-h-[120px] md:min-h-[150px] bg-white/50 border-primary/20 focus:border-primary"
                 required
               />
