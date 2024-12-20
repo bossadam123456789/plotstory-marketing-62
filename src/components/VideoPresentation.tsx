@@ -49,8 +49,8 @@ const VideoPresentation = () => {
               className="aspect-video rounded-2xl overflow-hidden shadow-2xl"
             >
               <img 
-                src="/lovable-uploads/d68412fd-1bcd-4b39-860f-02b30255e58a.png"
-                alt="Aerial View"
+                src="/lovable-uploads/d95bb8df-a8d3-45ba-abab-29137683fdfb.png"
+                alt="Plot Layout Plan"
                 className="w-full h-full object-cover animate-ken-burns"
               />
             </motion.div>
