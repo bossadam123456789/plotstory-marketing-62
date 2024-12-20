@@ -2,6 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import { Phone, MapPin, Zap } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const VideoPresentation = () => {
   const videoRef = useRef<HTMLDivElement>(null);
@@ -46,13 +53,35 @@ const VideoPresentation = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="aspect-video rounded-2xl overflow-hidden shadow-2xl"
+              className="max-w-5xl mx-auto"
             >
-              <img 
-                src="/lovable-uploads/d95bb8df-a8d3-45ba-abab-29137683fdfb.png"
-                alt="Plot Layout Plan"
-                className="w-full h-full object-cover animate-ken-burns"
-              />
+              <Carousel className="w-full">
+                <CarouselContent>
+                  <CarouselItem>
+                    <img 
+                      src="/lovable-uploads/d95bb8df-a8d3-45ba-abab-29137683fdfb.png"
+                      alt="Plot Layout Plan"
+                      className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img 
+                      src="/lovable-uploads/76efbbcf-7e38-41f7-96cf-128df8a95233.png"
+                      alt="Strategic Location"
+                      className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                    />
+                  </CarouselItem>
+                  <CarouselItem>
+                    <img 
+                      src="/lovable-uploads/2c5f8e54-df47-4ed3-9500-36c4edc70410.png"
+                      alt="Plot Features"
+                      className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                    />
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </motion.div>
           </div>
 
