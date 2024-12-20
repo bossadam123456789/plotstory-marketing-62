@@ -166,11 +166,11 @@ const PlotMap = () => {
               <div className="mt-6 flex flex-wrap justify-center gap-6 bg-sand/50 p-6 rounded-xl shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-5 h-5 bg-forest rounded-md shadow-sm"></div>
-                  <span className="text-base font-medium">Available ($30k)</span>
+                  <span className="text-base font-medium">Available</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-5 h-5 bg-[#FEF7CD] border border-black/10 rounded-md shadow-sm"></div>
-                  <span className="text-base font-medium">Premium ($35k)</span>
+                  <span className="text-base font-medium">Premium</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-5 h-5 bg-[#ea384c] rounded-md shadow-sm"></div>
