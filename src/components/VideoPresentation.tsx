@@ -53,8 +53,8 @@ const VideoPresentation = () => {
               transition={{ duration: 0.8 }}
               className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-center text-secondary max-w-5xl mx-auto leading-tight space-y-2"
             >
-              <div className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-primary/80 font-light mb-2">Syokimau Land For Sale</div>
-              Adam Boss Mtaa
+              <div className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-primary font-bold mb-2">Syokimau Land For Sale</div>
+              <div className="text-gray-500">Adam Boss Mtaa</div>
             </motion.h1>
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
