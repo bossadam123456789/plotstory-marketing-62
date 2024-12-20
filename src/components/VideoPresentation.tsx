@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Phone, MapPin, Zap } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
+import Autoplay from 'embla-carousel-autoplay';
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +13,9 @@ import {
 
 const VideoPresentation = () => {
   const videoRef = useRef<HTMLDivElement>(null);
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -55,7 +59,12 @@ const VideoPresentation = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <Carousel className="w-full">
+              <Carousel 
+                className="w-full"
+                plugins={[plugin.current]}
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
+              >
                 <CarouselContent>
                   <CarouselItem>
                     <img 
