@@ -18,9 +18,11 @@ const LocationMap = () => {
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
+      style: 'mapbox://styles/mapbox/satellite-streets-v12', // Changed to satellite view
       center: coordinates,
-      zoom: 17,
+      zoom: 14, // Reduced zoom level to show more area
+      pitch: 45, // Added pitch for better area perspective
+      bearing: -45, // Added bearing for better area view
     });
 
     // Add navigation controls
