@@ -15,7 +15,9 @@ const LocationMap = () => {
 
   const options = {
     mapTypeId: 'satellite',
-    zoom: 16
+    zoom: 16,
+    heading: 0,
+    tilt: 45
   };
 
   return (
@@ -25,7 +27,7 @@ const LocationMap = () => {
       </CardHeader>
       <CardContent>
         <div className="w-full h-[400px] rounded-lg overflow-hidden">
-          <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+          <LoadScript googleMapsApiKey={window.env.GOOGLE_MAPS_API_KEY}>
             <GoogleMap
               mapContainerStyle={mapContainerStyle}
               center={center}
