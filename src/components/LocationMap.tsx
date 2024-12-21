@@ -1,42 +1,22 @@
-import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import React from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 const LocationMap = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
+  const center = {
+    lat: -1.364734,
+    lng: 36.9741269
+  };
 
-  useEffect(() => {
-    if (!mapContainer.current) return;
+  const mapContainerStyle = {
+    width: '100%',
+    height: '400px'
+  };
 
-    // Replace this with your actual Mapbox public token
-    mapboxgl.accessToken = 'pk.YOUR_MAPBOX_PUBLIC_TOKEN';
-    
-    // Explicitly type the coordinates as [number, number]
-    const coordinates: [number, number] = [36.97661590576172, -1.3647876977920532]; // Longitude, Latitude
-
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/satellite-streets-v12', // Changed to satellite view
-      center: coordinates,
-      zoom: 14, // Reduced zoom level to show more area
-      pitch: 45, // Added pitch for better area perspective
-      bearing: -45, // Added bearing for better area view
-    });
-
-    // Add navigation controls
-    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-    // Add marker for the location
-    new mapboxgl.Marker()
-      .setLngLat(coordinates)
-      .addTo(map.current);
-
-    return () => {
-      map.current?.remove();
-    };
-  }, []);
+  const options = {
+    mapTypeId: 'satellite',
+    zoom: 16
+  };
 
   return (
     <Card className="w-full">
@@ -45,7 +25,15 @@ const LocationMap = () => {
       </CardHeader>
       <CardContent>
         <div className="w-full h-[400px] rounded-lg overflow-hidden">
-          <div ref={mapContainer} className="w-full h-full" />
+          <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+            <GoogleMap
+              mapContainerStyle={mapContainerStyle}
+              center={center}
+              options={options}
+            >
+              <Marker position={center} />
+            </GoogleMap>
+          </LoadScript>
         </div>
       </CardContent>
     </Card>
