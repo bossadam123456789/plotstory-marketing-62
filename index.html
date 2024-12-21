@@ -15,14 +15,14 @@
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <!-- Wait for GPT Engineer to initialize before loading the main application -->
     <script>
-      window.addEventListener('load', () => {
+      window.addEventListener('DOMContentLoaded', () => {
         // Small delay to ensure GPT Engineer is fully initialized
         setTimeout(() => {
           const mainScript = document.createElement('script');
           mainScript.type = 'module';
           mainScript.src = '/src/main.tsx';
           document.body.appendChild(mainScript);
-        }, 100);
+        }, 500); // Increased delay to ensure proper initialization
       });
     </script>
   </body>
