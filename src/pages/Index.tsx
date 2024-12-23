@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import LocationMap from "@/components/LocationMap";
 import NewsBar from "@/components/NewsBar";
 import { Button } from "@/components/ui/button";
-import { Phone, WhatsApp } from "lucide-react";
+import { Phone, MessageSquare } from "lucide-react";
 
 const Index = () => {
   const handleCall = () => {
@@ -33,7 +33,7 @@ const Index = () => {
             size="lg"
             className="bg-[#25D366] hover:bg-[#25D366]/90 text-white font-medium flex items-center gap-2 shadow-lg"
           >
-            <WhatsApp className="h-5 w-5" />
+            <MessageSquare className="h-5 w-5" />
             WhatsApp
           </Button>
           <Button
