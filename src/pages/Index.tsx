@@ -10,16 +10,16 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-gradient-to-b from-sand to-white">
       <div 
-        className="w-full h-[40vh] md:h-[70vh] bg-cover bg-center relative"
+        className="w-full h-[30vh] md:h-[50vh] bg-cover bg-center relative"
         style={{ 
-          backgroundImage: 'url("/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png")',
+          backgroundImage: 'url("/lovable-uploads/5d3dc6c9-13f3-43e7-8e32-6638c87553d5.png")',
         }}
       >
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center px-4 md:px-0">
           <div className="text-center text-white space-y-2 md:space-y-4">
-            <h1 className="text-3xl md:text-6xl font-light tracking-tight">Premium Land Plots</h1>
-            <p className="text-lg md:text-2xl font-light">Exclusive Real Estate Opportunity</p>
+            <h1 className="text-3xl md:text-5xl font-light tracking-tight">Premium Land Plots</h1>
+            <p className="text-lg md:text-xl font-light">Exclusive Real Estate Opportunity</p>
           </div>
         </div>
       </div>
