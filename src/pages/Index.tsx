@@ -4,10 +4,12 @@ import PropertyInfo from "@/components/PropertyInfo";
 import ContactForm from "@/components/ContactForm";
 import VideoPresentation from "@/components/VideoPresentation";
 import LocationMap from "@/components/LocationMap";
+import NewsBar from "@/components/NewsBar";
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-gradient-to-b from-sand to-white">
+      <NewsBar />
       <div className="max-w-[2000px] mx-auto">
         <VideoPresentation />
         <Hero />
