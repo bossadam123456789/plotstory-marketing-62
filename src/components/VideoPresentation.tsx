@@ -43,7 +43,7 @@ const VideoPresentation = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-primary text-white py-4">
+    <div className="bg-gradient-primary text-white">
       <div className="container mx-auto px-4">
         <div ref={videoRef} className="space-y-4 opacity-0 transition-opacity duration-1000">
           <div className="space-y-4">
