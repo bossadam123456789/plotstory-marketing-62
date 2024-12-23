@@ -23,7 +23,7 @@ const Hero = () => {
   return (
     <div className="relative bg-white">
       {/* Text Content Section */}
-      <div className="container mx-auto py-8 md:py-16 px-4">
+      <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light mb-4 md:mb-6 tracking-tight text-primary">
             Premium Land Plots
