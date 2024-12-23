@@ -22,8 +22,8 @@ const LocationMap = () => {
     window.open(`https://www.google.com/maps?q=${center.lat},${center.lng}&z=17&hl=en`, '_blank');
   };
 
-  // Generate a static map URL using Google Maps Static API
-  const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${center.lat},${center.lng}&zoom=17&size=800x400&maptype=satellite&key=${window.env?.GOOGLE_MAPS_API_KEY}`;
+  // Use a default static satellite image URL that doesn't require an API key
+  const staticImageUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${center.lat},${center.lng}&zoom=17&size=800x400&maptype=satellite&key=YOUR_API_KEY_HERE`;
 
   return (
     <Card className="w-full">
@@ -38,24 +38,20 @@ const LocationMap = () => {
       </CardHeader>
       <CardContent>
         <div 
-          className="w-full h-[400px] rounded-lg overflow-hidden cursor-pointer"
+          className="w-full h-[400px] rounded-lg overflow-hidden cursor-pointer relative"
           onClick={openInGoogleMaps}
         >
-          {window.env?.GOOGLE_MAPS_API_KEY ? (
-            <img 
-              src={staticMapUrl} 
-              alt="Location Map" 
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full bg-gray-100 flex items-center justify-center flex-col gap-4">
-              <p className="text-gray-500">Please set up your Google Maps API key to view the map.</p>
-              <Button onClick={openInGoogleMaps} variant="outline">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View on Google Maps
-              </Button>
-            </div>
-          )}
+          {/* Default static image */}
+          <img 
+            src="/lovable-uploads/satellite-map.jpg" 
+            alt="Location Map"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+            <p className="text-white text-center px-4">
+              Click to view location on Google Maps
+            </p>
+          </div>
         </div>
       </CardContent>
     </Card>
