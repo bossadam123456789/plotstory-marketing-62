@@ -61,6 +61,16 @@ const Hero = () => {
                   <div className="absolute inset-0 bg-black/20" />
                 </div>
               </CarouselItem>
+              <CarouselItem>
+                <div 
+                  className="relative min-h-[40vh] md:min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
+                  style={{ 
+                    backgroundImage: 'url("/lovable-uploads/d95bb8df-a8d3-45ba-abab-29137683fdfb.png")',
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/20" />
+                </div>
+              </CarouselItem>
             </CarouselContent>
             {!isMobile && (
               <>
