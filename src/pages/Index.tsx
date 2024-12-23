@@ -25,24 +25,14 @@ const Index = () => {
       </div>
       <div className="flex flex-col">
         <NewsBar />
-        <div className="md:mt-0">
-          <VideoPresentation />
-        </div>
-        <div className="md:mt-0">
-          <Hero />
-        </div>
-        <div className="md:mt-0">
-          <PropertyInfo />
-        </div>
-        <div className="md:mt-0">
-          <PlotMap />
-        </div>
-        <div className="container mx-auto px-4 md:px-6 py-8 md:py-16">
+        <VideoPresentation />
+        <Hero />
+        <PropertyInfo />
+        <PlotMap />
+        <div className="container mx-auto">
           <LocationMap />
         </div>
-        <div className="md:mt-0">
-          <ContactForm />
-        </div>
+        <ContactForm />
       </div>
     </main>
   );
