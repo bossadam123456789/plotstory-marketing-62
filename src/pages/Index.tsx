@@ -24,16 +24,14 @@ const Index = () => {
         </div>
       </div>
       <NewsBar />
-      <div className="max-w-[2000px] mx-auto">
-        <VideoPresentation />
-        <Hero />
-        <PropertyInfo />
-        <PlotMap />
-        <div className="container mx-auto px-4 py-16">
-          <LocationMap />
-        </div>
-        <ContactForm />
+      <VideoPresentation />
+      <Hero />
+      <PropertyInfo />
+      <PlotMap />
+      <div className="container mx-auto px-4 py-16">
+        <LocationMap />
       </div>
+      <ContactForm />
     </main>
   );
 };
