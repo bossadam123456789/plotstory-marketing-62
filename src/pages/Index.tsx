@@ -23,15 +23,17 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <NewsBar />
-      <VideoPresentation />
-      <Hero />
-      <PropertyInfo />
-      <PlotMap />
-      <div className="container mx-auto px-4 py-16">
-        <LocationMap />
+      <div className="flex flex-col">
+        <NewsBar />
+        <VideoPresentation />
+        <Hero />
+        <PropertyInfo />
+        <PlotMap />
+        <div className="container mx-auto px-4">
+          <LocationMap />
+        </div>
+        <ContactForm />
       </div>
-      <ContactForm />
     </main>
   );
 };
