@@ -55,7 +55,27 @@ const Hero = () => {
                 <div 
                   className="relative min-h-[40vh] md:min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
                   style={{ 
-                    backgroundImage: 'url("/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png")',
+                    backgroundImage: 'url("/lovable-uploads/5d3dc6c9-13f3-43e7-8e32-6638c87553d5.png")',
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/20" />
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div 
+                  className="relative min-h-[40vh] md:min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
+                  style={{ 
+                    backgroundImage: 'url("/lovable-uploads/d95bb8df-a8d3-45ba-abab-29137683fdfb.png")',
+                  }}
+                >
+                  <div className="absolute inset-0 bg-black/20" />
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div 
+                  className="relative min-h-[40vh] md:min-h-[60vh] bg-cover bg-center rounded-lg overflow-hidden"
+                  style={{ 
+                    backgroundImage: 'url("/lovable-uploads/2c5f8e54-df47-4ed3-9500-36c4edc70410.png")',
                   }}
                 >
                   <div className="absolute inset-0 bg-black/20" />
@@ -117,7 +137,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-6xl mx-auto">
           <div>
             <img 
-              src="/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png" 
+              src="/lovable-uploads/5d3dc6c9-13f3-43e7-8e32-6638c87553d5.png" 
               alt="Strategic Location"
               className="w-full h-[300px] md:h-[400px] object-cover rounded-lg shadow-sm"
             />
