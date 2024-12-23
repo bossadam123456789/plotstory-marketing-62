@@ -16,8 +16,8 @@ const Index = () => {
         }}
       >
         <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white space-y-4 p-4">
+        <div className="absolute inset-0 flex items-center justify-center -mt-8">
+          <div className="text-center text-white space-y-4">
             <h1 className="text-4xl md:text-6xl font-light tracking-tight">Premium Land Plots</h1>
             <p className="text-xl md:text-2xl font-light">Exclusive Real Estate Opportunity</p>
           </div>
