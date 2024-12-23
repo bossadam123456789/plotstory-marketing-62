@@ -3,6 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { ExternalLink } from 'lucide-react';
 
+// Declare the window interface to include our env property
+declare global {
+  interface Window {
+    env?: {
+      GOOGLE_MAPS_API_KEY?: string;
+    };
+  }
+}
+
 const LocationMap = () => {
   const center = {
     lat: -1.3647876977920532,
