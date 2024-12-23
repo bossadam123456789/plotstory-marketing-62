@@ -24,7 +24,7 @@ const Index = () => {
         </div>
       </div>
       <NewsBar />
-      <div className="max-w-[2000px] mx-auto -mt-1">
+      <div className="max-w-[2000px] mx-auto">
         <VideoPresentation />
         <Hero />
         <PropertyInfo />
