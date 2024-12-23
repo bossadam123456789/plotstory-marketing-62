@@ -43,10 +43,10 @@ const VideoPresentation = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-primary text-white py-8 md:py-16 lg:py-24">
+    <div className="bg-gradient-primary text-white py-4">
       <div className="container mx-auto px-4">
-        <div ref={videoRef} className="space-y-8 md:space-y-16 opacity-0 transition-opacity duration-1000">
-          <div className="space-y-6 md:space-y-8">
+        <div ref={videoRef} className="space-y-4 opacity-0 transition-opacity duration-1000">
+          <div className="space-y-4">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -107,7 +107,7 @@ const VideoPresentation = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
