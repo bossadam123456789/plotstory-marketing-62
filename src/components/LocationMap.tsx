@@ -22,9 +22,6 @@ const LocationMap = () => {
     window.open(`https://www.google.com/maps?q=${center.lat},${center.lng}&z=17&hl=en`, '_blank');
   };
 
-  // Use a default static satellite image URL that doesn't require an API key
-  const staticImageUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${center.lat},${center.lng}&zoom=17&size=800x400&maptype=satellite&key=YOUR_API_KEY_HERE`;
-
   return (
     <Card className="w-full">
       <CardHeader>
@@ -41,9 +38,8 @@ const LocationMap = () => {
           className="w-full h-[400px] rounded-lg overflow-hidden cursor-pointer relative"
           onClick={openInGoogleMaps}
         >
-          {/* Default static image */}
           <img 
-            src="/lovable-uploads/satellite-map.jpg" 
+            src="/lovable-uploads/0fb3a29c-1dd0-48ba-a9ca-25b9a68c7842.png"
             alt="Location Map"
             className="w-full h-full object-cover"
           />
