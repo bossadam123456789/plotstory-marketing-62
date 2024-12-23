@@ -1,16 +1,7 @@
 import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { ExternalLink } from 'lucide-react';
-
-declare global {
-  interface Window {
-    env?: {
-      GOOGLE_MAPS_API_KEY?: string;
-    };
-  }
-}
 
 const LocationMap = () => {
   const center = {
@@ -18,41 +9,12 @@ const LocationMap = () => {
     lng: 36.97661590576172
   };
 
-  const mapContainerStyle = {
-    width: '100%',
-    height: '400px'
-  };
-
-  const options = {
-    mapTypeId: 'satellite',
-    zoom: 17,
-    heading: 0,
-    tilt: 45
-  };
-
   const openInGoogleMaps = () => {
     window.open(`https://www.google.com/maps?q=${center.lat},${center.lng}&z=17&hl=en`, '_blank');
   };
 
-  // Fallback if API key is not set
-  if (!window.env?.GOOGLE_MAPS_API_KEY) {
-    return (
-      <Card className="w-full">
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold">Location</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="w-full h-[400px] rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center flex-col gap-4">
-            <p className="text-gray-500">Please set up your Google Maps API key to view the map.</p>
-            <Button onClick={openInGoogleMaps} variant="outline">
-              <ExternalLink className="w-4 h-4 mr-2" />
-              View on Google Maps
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+  // Generate a static map URL using Google Maps Static API
+  const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${center.lat},${center.lng}&zoom=17&size=800x400&maptype=satellite&key=${window.env?.GOOGLE_MAPS_API_KEY}`;
 
   return (
     <Card className="w-full">
@@ -66,16 +28,25 @@ const LocationMap = () => {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="w-full h-[400px] rounded-lg overflow-hidden">
-          <LoadScript googleMapsApiKey={window.env.GOOGLE_MAPS_API_KEY}>
-            <GoogleMap
-              mapContainerStyle={mapContainerStyle}
-              center={center}
-              options={options}
-            >
-              <Marker position={center} />
-            </GoogleMap>
-          </LoadScript>
+        <div 
+          className="w-full h-[400px] rounded-lg overflow-hidden cursor-pointer"
+          onClick={openInGoogleMaps}
+        >
+          {window.env?.GOOGLE_MAPS_API_KEY ? (
+            <img 
+              src={staticMapUrl} 
+              alt="Location Map" 
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-100 flex items-center justify-center flex-col gap-4">
+              <p className="text-gray-500">Please set up your Google Maps API key to view the map.</p>
+              <Button onClick={openInGoogleMaps} variant="outline">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                View on Google Maps
+              </Button>
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>
