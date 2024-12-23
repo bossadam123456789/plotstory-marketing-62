@@ -19,6 +19,15 @@ const plots: Plot[] = Array.from({ length: 31 }, (_, i) => {
 const PlotMap = () => {
   const [selectedPlot, setSelectedPlot] = useState<Plot | null>(null);
 
+  const handlePlotSelect = (plot: Plot) => {
+    setSelectedPlot(plot);
+    // Scroll to plot info
+    const plotInfo = document.getElementById('plot-info');
+    if (plotInfo) {
+      plotInfo.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div id="plots" className="bg-gradient-primary py-16 md:py-24">
       <div className="container">
@@ -58,7 +67,7 @@ const PlotMap = () => {
                   <PlotRow
                     plots={[1, 2, 3, 4, 5, 6]}
                     transform="translate(250, 0)"
-                    onPlotSelect={setSelectedPlot}
+                    onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
                   />
@@ -77,7 +86,7 @@ const PlotMap = () => {
                   <PlotRow
                     plots={[11, 10, 9, 8, 7]}
                     transform="translate(250, 180)"
-                    onPlotSelect={setSelectedPlot}
+                    onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
                   />
@@ -96,7 +105,7 @@ const PlotMap = () => {
                   <PlotRow
                     plots={[16, 15, 14, 13, 12]}
                     transform="translate(250, 360)"
-                    onPlotSelect={setSelectedPlot}
+                    onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
                   />
@@ -104,7 +113,7 @@ const PlotMap = () => {
                   <PlotRow
                     plots={[21, 20, 19, 18, 17]}
                     transform="translate(250, 500)"
-                    onPlotSelect={setSelectedPlot}
+                    onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
                   />
@@ -123,7 +132,7 @@ const PlotMap = () => {
                   <PlotRow
                     plots={[26, 25, 24, 23, 22]}
                     transform="translate(250, 680)"
-                    onPlotSelect={setSelectedPlot}
+                    onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
                   />
@@ -131,7 +140,7 @@ const PlotMap = () => {
                   <PlotRow
                     plots={[31, 30, 29, 28, 27]}
                     transform="translate(250, 820)"
-                    onPlotSelect={setSelectedPlot}
+                    onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
                   />

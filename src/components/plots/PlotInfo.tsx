@@ -25,7 +25,7 @@ export const PlotInfo = ({ selectedPlot }: PlotInfoProps) => {
   };
 
   return (
-    <Card className="h-fit">
+    <Card className="h-fit" id="plot-info">
       <CardHeader>
         <CardTitle>Plot Information</CardTitle>
         <CardDescription>

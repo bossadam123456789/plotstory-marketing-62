@@ -9,7 +9,7 @@ interface PlotRowProps {
 }
 
 export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor }: PlotRowProps) => {
-  const mainRoadPlots = [7, 16, 17, 26, 27]; // Plot 6 is now handled separately
+  const mainRoadPlots = [7, 16, 17, 26, 27];
   let currentX = 0;
 
   return (
@@ -18,7 +18,6 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
         const plot = allPlots[num - 1];
         const isMainRoadPlot = mainRoadPlots.includes(num);
         const isPlot6 = num === 6;
-        // Plot 6 gets a special width and positioning
         const width = isPlot6 ? 130 : (isMainRoadPlot ? 170 : 130);
         const x = currentX;
         currentX += width;
@@ -26,7 +25,7 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
         return (
           <g
             key={num}
-            className="plot-hover cursor-pointer"
+            className="plot-hover cursor-pointer transition-all duration-300"
             onClick={() => onPlotSelect(plot)}
           >
             <rect
@@ -37,7 +36,25 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
               fill={getPlotColor(plot.status, plot.id)}
               stroke="#000"
               strokeWidth="1"
-            />
+              className="transition-all duration-300 hover:opacity-80"
+            >
+              <animate
+                attributeName="opacity"
+                from="1"
+                to="0.6"
+                dur="0.5s"
+                begin="click"
+                fill="freeze"
+              />
+              <animate
+                attributeName="opacity"
+                from="0.6"
+                to="1"
+                dur="0.5s"
+                begin="click+0.5s"
+                fill="freeze"
+              />
+            </rect>
             <text
               x={x + width/2}
               y={60}
