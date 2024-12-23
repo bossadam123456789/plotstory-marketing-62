@@ -5,11 +5,15 @@ import ContactForm from "@/components/ContactForm";
 import LocationMap from "@/components/LocationMap";
 import NewsBar from "@/components/NewsBar";
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, WhatsApp } from "lucide-react";
 
 const Index = () => {
   const handleCall = () => {
     window.location.href = 'tel:+254729113327';
+  };
+
+  const handleWhatsApp = () => {
+    window.location.href = 'https://wa.me/254729113327';
   };
 
   return (
@@ -23,7 +27,15 @@ const Index = () => {
           <LocationMap />
         </div>
         <ContactForm />
-        <div className="fixed bottom-8 right-8 z-50">
+        <div className="fixed bottom-8 right-8 z-50 flex gap-4">
+          <Button
+            onClick={handleWhatsApp}
+            size="lg"
+            className="bg-[#25D366] hover:bg-[#25D366]/90 text-white font-medium flex items-center gap-2 shadow-lg"
+          >
+            <WhatsApp className="h-5 w-5" />
+            WhatsApp
+          </Button>
           <Button
             onClick={handleCall}
             size="lg"
