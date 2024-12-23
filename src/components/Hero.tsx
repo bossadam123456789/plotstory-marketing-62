@@ -22,6 +22,16 @@ const Hero = () => {
 
   return (
     <div className="relative bg-white">
+      {/* Hero Image */}
+      <div className="w-full h-[300px] md:h-[400px] relative overflow-hidden">
+        <img 
+          src="/lovable-uploads/a0c5b506-e23f-4381-b75f-5196a80c52b6.png"
+          alt="Aerial view of the property"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
+
       {/* Text Content Section */}
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
