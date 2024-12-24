@@ -13,7 +13,8 @@ const Index = () => {
   };
 
   const handleWhatsApp = () => {
-    window.location.href = 'https://wa.me/254729113327';
+    const message = encodeURIComponent("Hi, thank you for contacting Adma Boss Mtaa! 🌟");
+    window.location.href = `https://wa.me/254729113327?text=${message}`;
   };
 
   return (
