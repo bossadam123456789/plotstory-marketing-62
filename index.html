@@ -13,17 +13,7 @@
     <div id="root"></div>
     <!-- Load and initialize GPT Engineer script first -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <!-- Wait for GPT Engineer to initialize before loading the main application -->
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        // Small delay to ensure GPT Engineer is fully initialized
-        setTimeout(() => {
-          const mainScript = document.createElement('script');
-          mainScript.type = 'module';
-          mainScript.src = '/src/main.tsx';
-          document.body.appendChild(mainScript);
-        }, 500); // Increased delay to ensure proper initialization
-      });
-    </script>
+    <!-- Main application script -->
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
