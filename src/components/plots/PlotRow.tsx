@@ -32,19 +32,19 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
             className="plot-hover cursor-pointer transition-all duration-300"
             onClick={() => onPlotSelect(plot)}
           >
-            {/* Selection shadow effect */}
+            {/* Enhanced Selection shadow effect */}
             {isSelected && (
               <rect
-                x={x - 2}
-                y={-2}
-                width={width + 4}
-                height={124}
+                x={x - 4}
+                y={-4}
+                width={width + 8}
+                height={128}
                 fill="none"
                 stroke="#000"
                 strokeWidth="2"
-                filter="drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))"
-                rx="3"
-                ry="3"
+                filter="drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7))"
+                rx="6"
+                ry="6"
               />
             )}
             <rect
@@ -54,7 +54,9 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
               height={120}
               fill={getPlotColor(plot.status, plot.id)}
               stroke={isSelected ? "#000" : "#555"}
-              strokeWidth={isSelected ? "2" : "1"}
+              strokeWidth={isSelected ? "3" : "1"}
+              rx="3" 
+              ry="3"
               className={`transition-all duration-300 ${isSelected ? "opacity-90" : "hover:opacity-80"}`}
             >
               <animate
@@ -97,17 +99,43 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
               </text>
             )}
             {isSelected && (
-              <text
-                x={x + width/2}
-                y={100}
-                fill={plot.isPrime ? "#000" : "white"}
-                textAnchor="middle"
-                fontSize="12"
-                fontWeight="600"
-                className="animate-fade-in"
-              >
-                Selected
-              </text>
+              <>
+                <text
+                  x={x + width/2}
+                  y={100}
+                  fill={plot.isPrime ? "#000" : "white"}
+                  textAnchor="middle"
+                  fontSize="12"
+                  fontWeight="600"
+                  className="animate-fade-in"
+                >
+                  Selected
+                </text>
+                {/* Pulse circle effect for selected plot */}
+                <circle
+                  cx={x + width/2}
+                  cy={60}
+                  r={30}
+                  fill="transparent"
+                  stroke={plot.isPrime ? "#000" : "#fff"}
+                  strokeWidth="1"
+                  opacity="0.5"
+                  className="animate-pulse"
+                >
+                  <animate
+                    attributeName="r"
+                    values="30;40;30"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values="0.5;0.2;0.5"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+              </>
             )}
           </g>
         );
