@@ -1,3 +1,4 @@
+
 import { Plot } from "./types";
 
 interface PlotRowProps {
@@ -6,9 +7,10 @@ interface PlotRowProps {
   onPlotSelect: (plot: Plot) => void;
   allPlots: Plot[];
   getPlotColor: (status: Plot["status"], plotId: number) => string;
+  selectedPlot: Plot | null;
 }
 
-export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor }: PlotRowProps) => {
+export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor, selectedPlot }: PlotRowProps) => {
   const mainRoadPlots = [7, 16, 17, 26, 27];
   let currentX = 0;
 
@@ -22,21 +24,38 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
         const x = currentX;
         currentX += width;
         
+        const isSelected = selectedPlot?.id === plot.id;
+        
         return (
           <g
             key={num}
             className="plot-hover cursor-pointer transition-all duration-300"
             onClick={() => onPlotSelect(plot)}
           >
+            {/* Selection shadow effect */}
+            {isSelected && (
+              <rect
+                x={x - 2}
+                y={-2}
+                width={width + 4}
+                height={124}
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+                filter="drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5))"
+                rx="3"
+                ry="3"
+              />
+            )}
             <rect
               x={x}
               y={0}
               width={width}
               height={120}
               fill={getPlotColor(plot.status, plot.id)}
-              stroke="#000"
-              strokeWidth="1"
-              className="transition-all duration-300 hover:opacity-80"
+              stroke={isSelected ? "#000" : "#555"}
+              strokeWidth={isSelected ? "2" : "1"}
+              className={`transition-all duration-300 ${isSelected ? "opacity-90" : "hover:opacity-80"}`}
             >
               <animate
                 attributeName="opacity"
@@ -75,6 +94,19 @@ export const PlotRow = ({ plots, transform, onPlotSelect, allPlots, getPlotColor
                 fontWeight="500"
               >
                 35k USD
+              </text>
+            )}
+            {isSelected && (
+              <text
+                x={x + width/2}
+                y={100}
+                fill={plot.isPrime ? "#000" : "white"}
+                textAnchor="middle"
+                fontSize="12"
+                fontWeight="600"
+                className="animate-fade-in"
+              >
+                Selected
               </text>
             )}
           </g>

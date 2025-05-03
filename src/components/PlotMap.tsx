@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Plot, getPlotColor, getPlotPrice } from "./plots/types";
 import { PlotRow } from "./plots/PlotRow";
@@ -20,11 +21,16 @@ const PlotMap = () => {
   const [selectedPlot, setSelectedPlot] = useState<Plot | null>(null);
 
   const handlePlotSelect = (plot: Plot) => {
-    setSelectedPlot(plot);
-    // Scroll to plot info
-    const plotInfo = document.getElementById('plot-info');
-    if (plotInfo) {
-      plotInfo.scrollIntoView({ behavior: 'smooth' });
+    // If plot is already selected, unselect it
+    if (selectedPlot?.id === plot.id) {
+      setSelectedPlot(null);
+    } else {
+      setSelectedPlot(plot);
+      // Scroll to plot info
+      const plotInfo = document.getElementById('plot-info');
+      if (plotInfo) {
+        plotInfo.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -47,6 +53,9 @@ const PlotMap = () => {
                   <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
                     <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#2F5233" strokeWidth="0.5" opacity="0.15"/>
                   </pattern>
+                  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="0" stdDeviation="5" floodColor="#000" floodOpacity="0.3" />
+                  </filter>
                 </defs>
                 <rect x="0" y="0" width="1200" height="1400" fill="url(#grid)" />
                 
@@ -70,6 +79,7 @@ const PlotMap = () => {
                     onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
+                    selectedPlot={selectedPlot}
                   />
                   
                   {/* 9M Road */}
@@ -89,6 +99,7 @@ const PlotMap = () => {
                     onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
+                    selectedPlot={selectedPlot}
                   />
                   
                   {/* 9M Road */}
@@ -108,6 +119,7 @@ const PlotMap = () => {
                     onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
+                    selectedPlot={selectedPlot}
                   />
                   
                   <PlotRow
@@ -116,6 +128,7 @@ const PlotMap = () => {
                     onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
+                    selectedPlot={selectedPlot}
                   />
                   
                   {/* 9M Road */}
@@ -135,6 +148,7 @@ const PlotMap = () => {
                     onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
+                    selectedPlot={selectedPlot}
                   />
                   
                   <PlotRow
@@ -143,6 +157,7 @@ const PlotMap = () => {
                     onPlotSelect={handlePlotSelect}
                     allPlots={plots}
                     getPlotColor={getPlotColor}
+                    selectedPlot={selectedPlot}
                   />
                 </g>
 
@@ -184,6 +199,10 @@ const PlotMap = () => {
                 <div className="flex items-center gap-3">
                   <div className="w-5 h-5 bg-[#ea384c] rounded-md shadow-sm"></div>
                   <span className="text-base font-medium">Sold</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-5 h-5 bg-white border-2 border-black shadow-lg"></div>
+                  <span className="text-base font-medium">Selected</span>
                 </div>
               </div>
             </div>
